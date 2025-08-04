@@ -1,0 +1,30 @@
+Encapsulation: The process of binding the data(variables) together it's methods(functions) is known as encapsulation.
+			   We can achieve encapsulation using private members. that means if we declare any member as a private then outside the class we can't access.
+			   
+			   EX:
+			   
+								public class EncapsulationExample {
+
+										public static void main(String[] args) {
+											
+											Encapsulation obj = new Encapsulation();
+											obj.display();
+											//System.out.println(obj.j);
+											//System.out.println(obj.k);
+										}
+
+									}
+
+									class Encapsulation{
+										
+										/*data or variables*/
+										 private int k = 90;
+										 private int j = 78;
+										
+										public void display() {
+											System.out.println("The value of k: "+ k);
+											System.out.println("The value of j: "+ j);
+										}
+										
+									}
+									

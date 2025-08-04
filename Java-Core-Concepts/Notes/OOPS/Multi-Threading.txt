@@ -1,0 +1,137 @@
+Multithreading in java: 
+
+				Application: Set of programs collected together to perform specified work we can call as application.
+				
+				Program: Set of instructions or statements
+				
+				Process: The program under execution is known as process.
+				
+				Task: The part of the process which is executed/ executing is known as task.
+				
+				Multi-Tasking: The process of executing multiple tasks at a time is known multi-tasking.
+				
+				Multi-Tasking can be two types:
+				
+				
+				1) Process based multi-tasking: The process of executing multiple tasks from multiple processes is know as Process based multi-tasking
+												Ex: OS(operating system)
+												
+												Dis-advantage: In this process based multi-tasking for every task we need bind the address location of the process,
+															   Which waste the execution time and consumes more CPU and also degrades the performance.
+															   
+															   
+												Process Switching: In Process based multi-tasking CPU Switches from one process to another process which is known process switching.
+												
+				
+				
+				2) Thread based multi-tasking: The process of executing multiple tasks from same process is known as thread based multi-tasking.
+				
+											Advantage: In Thread based multi-tasking all the multiple tasks are executing from same address location.
+											
+											
+									
+									Thread: The part of a task which is executed/executing is known as Thread.
+											Thread is a light-weight process and background process which is also known as child process.
+											
+											background process means thread will not have any special identification, thread can be identified by the parent process.
+											light-weight means Thread consumes less time in loading and executing.
+											
+											
+						Multithreading: The process of executing multiple threads at a time is known as multithreading.
+						
+										States of thread:
+										
+										
+										New: When the thread is created it is in new State. and not yet started.
+										
+										Runnable: the thread which is running or ready for execution but it's waiting for resource.
+										
+										Blocked: Waiting to acquire a monitor lock to enter or re-enter into the synchronized block or method.
+										
+										Waiting: Waiting for  some other thread to perform specific action in a specified time limit
+										
+										Terminated: Thread has completes execution or stopped or terminates due any error/exception.
+										
+										
+										
+								Creation of thread: In java we can threads in two ways.
+								
+													i) By extending Thread class:
+													ii) By implementing Runnable interface.
+									
+									
+												i) By extending Thread class: The user defined class must extends Thread class.
+																			  The user-defined class must override run() method which is a overriding method of java.lang.Thread,
+																			  And the required logic can be written inside the run method.
+																			  Then we need to create user-defined class object.
+																			  And call start method.
+																			  
+												
+												
+												ii) By implementing Runnable interface.	The user defined class must implements Runnable class.
+																			  The user-defined class must override run() method which is a overriding method of java.lang.Thread,
+																			  And the required logic can be written inside the run method.
+																			  Then we need to create user-defined class object.
+																			  Then pass user-defined object as a argument to the Thread class.
+																			  And call start method.
+											
+											Unsafe state of an application: If the more than one thread accessing same resource then the application will be in unsafe state and will produce wrong results.
+											
+											Thread Synchronization : The process of ordering the threads one after another is known as thread synchronization.
+											
+											Thread Synchronization can be two types:
+											
+																					i) Mutual exclusion:
+																					ii) Thread Communication:
+																					
+												
+						
+																		i) Mutual exclusion: The process of locking the programming resource and ordering threads is known as mutual exclusion.
+																		
+																		Mutual exclusion can be done in following ways.
+																		
+																		1) Using Synchronized block
+																		2) using Synchronized method.
+																		
+						
+																	1) Using Synchronized block: locking set of statements and ordering threads.
+																	
+																	
+																	2) using Synchronized method: locking method and ordering threads.
+																	
+						
+						
+																	ii) Thread Communication: The process of making communication between threads using following methods is known as thread communication.
+																	
+																	1)wait(): This wait() method can be used to put the thread in waiting state.
+																			  The thread which is waiting state will able to get notify from other threads.
+																			  
+																	
+																	2)notify(): This notify() method can be used release locked object and sends notification only one waiting thread.
+																	
+																	3)notifyAll(): This notifyAll() method can be used release locked object and sends notification all waiting threads.
+															
+															
+																	yield():  This method can be used to put the current thread in waiting state and give chance to another .
+																			 
+																	join(): This method will put the current thread into waiting state and starts it's execution.
+																	
+																	interrupt(): can be used to interrupt the thread.
+																	
+																	
+
+													Main thread: The thread which is created by JVM and and is parent for all the user defined threads.
+																 This main thread always have higher priority than other threads.
+																 Main thread will get executed to prior to user defined threads.
+																 
+																 
+																 
+																 Demon Thread: Demon thread is the low-priority thread which will runs in background to perform some task.
+																				Ex : Garbage collector and finalizer etc. 
+																				
+																				We can make thread as demon thread using setDemon(true)
+																			
+																			
+																			
+														Note: Whenever we call start() method then thread will be registered within thread scheduler and separate stack will be created inside java stack area.
+															  And loads the run() method onto the thread stack and starts execution.

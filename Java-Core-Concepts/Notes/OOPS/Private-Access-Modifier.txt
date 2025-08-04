@@ -1,0 +1,50 @@
+private access modifier: 
+
+							1) private variables: can be accessed within the same class.
+							2) private methods: can't be overrided
+							3) private class: can be declared only as inner class.
+							4) private constructor: outside the class we can't create object
+													In real time private constructors can be used to create singleton class.
+													singleton class: the class which generates only object is known  singleton class.
+																	 we can create singleton class using private constructor and provide the static method to get object of that class
+											
+											
+									EX:
+											public class PrivateConstructor {
+
+													public static void main(String[] args) {
+														
+														Test.getObject().m2();
+														Test.getObject().m2();
+													}
+
+												}
+
+
+												class Test {
+													
+													private static Test test= null;
+													
+													private Test() {
+														
+													}
+													
+													
+													public static Test getObject() {
+														
+														if(test == null) {
+															test = new Test();
+														}
+														System.out.println(test.hashCode());
+														return test;
+														
+													}
+													
+													
+													public void m2() {
+														System.out.println("From singleton class");
+													}
+													
+												}
+												
+										hashcode(): can be used to get the address location of object within the heap area.

@@ -1,0 +1,121 @@
+Data Types : data types can be used to specify what type of data that variable can hold.
+
+		ex: int k ="string"; // compile time error. because the variable k should hold only integer type of data.
+			int k =10;/  no compile time error.
+			
+			data types are two types.
+			1) Primitive data types.
+			2) Non-primitive(user defined) data types.
+ 
+ 1)Primitive data types: These are the data types already defined in Java programming language.
+ 
+	Boolean Type: boolean (true/false) default value is false size is 1 bit
+			ex: boolean b = true;
+	
+	Numeric Type: 
+		
+		Character: 
+				char: default values is \u0000 size is 2 bytes(16 bits), can be declared using single quotes.
+					  ex: char c = 'A'; 
+						  char c = '65';
+		
+		 Integer: 
+			
+			Integer: 
+				
+				byte: default value is 0 and size 8 bits(1 byte) range is -128 to 127
+				short: default value is 0 and size 16 bits(2 bytes) range is -32768 to 32767
+				int: default value is 0 and size 32 bits(4 bytes) range -2147483648 to 2147483647
+				long: default value is 0 and size 64 bits (8 bytes) 
+			
+			Floating point: 
+				
+				float: default value is 0.0 size is 32 bits(4 bytes)
+				double: default value is 0.0 size is 64 bits(8 bytes)
+				
+				ex: 
+				
+							byte b = 127; // byte data type.
+							
+							short s = 13; // 
+							
+							int i = 14;
+							
+							long l = 367;
+							
+							float f = 32.4f;
+							
+							double d = 32.7;
+							
+							char c = 'k';
+							
+							boolean b1 = true;
+	
+ 
+ 2)Non-primitive(user defined) data types: Data types which are not defined in Java programming language(programmer can defined) except String.
+										   for all the non-primitive data types the default value is null.
+ 
+	ex : String, Arrays,Class user defined objects etc.
+	
+	differences :
+	
+		1) primitive date types are already by defined by the java programming language. where as non-primitive date types are not defined
+		2) primitive data types start with lowercase letter, where as non-primitive data types start with uppercase letter.
+			ex : String, Arrays
+		3) With non-primitive data types we can call methods. but using primitive data types we can't.
+			ex: String str = "test";
+				str = str.toUpperCase();
+				char c = 't'; // no methods available
+		3) primitive data types always has some value.but non-primitive data types can be null.
+		4) primitive data types size is based on the data types, where as non-primitive data types have all the same size.
+		
+		
+		Ex: 
+		
+						public class DataTypes {
+
+						
+						int p;
+						String j;
+						int arr[];
+						public static void main(String[] args) {
+							
+							byte b = 127; // byte data type.
+							
+							short s = 13; // 
+							
+							int i = 14;
+							
+							long l = 367;
+							
+							float f = 32.4f;
+							
+							double d = 32.7;
+							
+							char c = 'k';
+							
+							boolean b1 = true;
+						
+							String str = "test";
+							str = str.toUpperCase();
+							
+							System.out.println(new DataTypes().p);
+							System.out.println(new DataTypes().j);
+							System.out.println(new DataTypes().arr);
+							
+							System.out.println(str);
+							
+							System.out.println("byte: "+b);
+							System.out.println("short: "+s);
+							
+							System.out.println("int: "+i);
+							System.out.println("long: "+l);
+							System.out.println("float: "+f);
+							System.out.println("double: "+d);
+							System.out.println("char: "+c);
+							System.out.println("boolean: "+b1);
+
+						}
+
+					}
+					

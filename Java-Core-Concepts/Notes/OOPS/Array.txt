@@ -1,0 +1,20 @@
+Arrays in java: Array is an object which can hold similar type of data with fixed length.
+				As Array is an object we can get length of an array using length() method.
+				Within the array we can store primitive type data as well as object data.
+				data in array is ordered, and each element has it's index.
+				Array index starts with zero and we get the last element of an array using length-1
+				Each array implements Cloneable and Serializable interfaces.
+				The Size of an array must be specified by int or short.
+				We can access elements of array randomly(Each element can be retrieved in same time).
+				
+				Syntax:
+				       <data-type> <reference-name> = new <data-type>[length];
+					   <data-type> <reference-name> = new <data-type>[]{elements};
+					  <data-type> <reference-name> = {elements};
+					  
+				Iterate through array: We can iterate through array using traditional for loop and foreach loop.
+				
+				
+			Object[] array: This array can be used to store any type / non-similar/heterogeneous data.
+						   But while iterating we should handle what type we are retrieving otherwise we will get ClassCastException
+				ClassCastException is the runtime exception which can be raised while casting one type object into another type of object.

@@ -1,0 +1,54 @@
+Wrapper class: The class which can be used to wrap or convert primitive data into object data is known as wrapper class.
+
+
+
+
+		boxing: The process of converting primitive data type to into Wrapper class object type is known as boxing.
+				If the boxing is automatically done by JVM then we call it as auto-boxing.
+				EX:
+						int = 121;
+						Interger k =i;
+		Unboxing: The process of taking primitive data type out of wrapper class object is known as unboxing.
+		
+		
+		Following are the wrapper classes for all the primitive data types.
+		
+		primitive data type:		Wrapper class:
+		===================			===============
+		char						Character
+		byte						Byte
+		short						Short
+		int							Integer
+		long 						Long
+		float 						Float
+		double						Double
+		boolean						Boolean
+		
+		
+		Need of wrapper classes:
+		
+								In collections we can use only objects for that these wrapper classes can be used. ex: ArrayList.HashSet,HashMap etc.
+								Supports synchronization.
+								We can call object methods like toString(),hashCode() etc.
+								
+								
+						
+						
+					Possible ways:
+					
+									1) Primitive data type into Wrapper class
+									2) Wrapper class to primitive data type
+									3) String to Wrapper class
+									4) Wrapper class to String.
+									
+									
+					Number class: Number class is the abstract class and is super class for all the numeric wrapper classes.
+					
+								  Method from Number class are available to all the numeric wrapper classes.
+								  public java.lang.Number();
+								  public abstract int intValue();
+								  public abstract long longValue();
+								  public abstract float floatValue();
+								  public abstract double doubleValue();
+								  public byte byteValue();
+								  public short shortValue();

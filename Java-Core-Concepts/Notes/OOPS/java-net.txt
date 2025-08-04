@@ -1,0 +1,56 @@
+java.net: java.net package can be used for networking programming.
+
+		Network: internet connection of systems known as network.
+		types of networks:
+							1)LAN: local area network.
+							2)MAN: metropolitan network
+							3)WAN: wide area network
+							4)WWW: world wide web
+							
+							
+							WWW: world wide web and which is internet connection of internet servers across world.
+							
+					The network are categorised into two types.
+					
+					i) Server: The server is the system or program which can accepts the request from the client and provides the service.
+					
+					ii)Client: The Client is the system or program which sends request to server for service.
+					
+					
+					protocol: protocols in the networking are rules and regulations followed by computer networks
+					
+					
+					These protocols can be two types:
+					
+					i) Connection-Oriented protocol: In this type of protocols sender receives the acknowledgement from the receiver that the content has been received. 
+					
+							Ex: TCP/IP(Transmission control protocol/internet protocol) whats's app,facebook etc.
+					ii) Connection-less protocol: In this type of protocols sender will not receives the acknowledgement from the receiver that the content has been received. 
+					
+							EX: UDP(User datagram protocol) best example is SMS 
+							
+							
+					IP Address: It is the unique Identification number used to identify system in the networking.
+					
+					Socket: The logical connection which established between client and server is known as socket.
+					
+					Port Number: port numbers are numeric numbers which can be used for socket connection.
+					
+					Note: These port numbers can be 0-65535
+					
+					
+					some of the reserved ports in networking:
+					
+						13 : date and time servers
+						21: for FTP (File transfer protocol)
+						25: Used for SMTP(Simple mail transfer protocol)
+						80: used for Http(Hyper text transfer protocol).
+						
+						
+						Classes from java.net package for networking:
+						
+						Socket, ServerSocket: Used for TCP/IP connection.
+						DatagramPacket, DatagramSocket : For UDP connection.
+						
+						URL , URLConnection: Used for read and write the data from the internet.
+						InetAddress: Used for to get IP address and host name of the system.

@@ -1,0 +1,31 @@
+Packages: Package is the container which groups the related types(classes,interfaces,annotations and enumerations).
+		  Package name is unique that means no two packages have the same name.
+		  naming convention is com.<company-name>.<name>;
+							ex: package com.charani.coreJavaExamples;
+		
+		Syntax: package <package-name>; // here the package is keyword to create the package
+		
+		1)pre-defined packages: The packages which are already defined in java are known as pre-defined packages.
+								ex: java.lang -> language package and it is the default package
+									java.util -> utility package provides the utility classes
+									java.sql -> provides classes for jdbc transactions
+									java.net -> provides the classes for networking applications.
+									java.io -> provides the classes for input and output operations.
+									
+		
+		2)user-defined packages: The packages which are defined by programmer are known as user-defined packages.
+								 All the packages we create in our application comes under user-defined packages.
+								 
+								
+Import : Importing/loading  user defined or predefined java classes into our current program is known as import
+		 import can be done at the first line of our program.
+
+		1)Implicit import: Load all classes from the package is known as implicit import
+		
+				Syntax: 
+						import <package-name>.*; // here the * indicates all the classes from the package
+		
+		2)Explicit import: Load specific classes from package is known as explicit import.
+						
+						Syntax: 
+								import <package-name>.<class-name>;

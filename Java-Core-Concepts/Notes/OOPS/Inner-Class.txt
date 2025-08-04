@@ -1,0 +1,227 @@
+Inner class: The class which is declared inside the class is known as inner class.
+
+		1) Member inner class: The class which is declared as a part of class i.e inside class outside of methods.
+								i) non-static inner class:
+															*) The inner class which is declared without static keyword is known as non-static inner class.
+															*) The non-static inner class can access all the members of outer class.
+															*) Within the non-static inner class we can declare non-static and static members(variables, methods etc.)
+															*) Whenever we want to access inner class members then declare that inner class object inside the out class and access them using inner class object.
+															*) outer class object will be created inside the main class.
+															
+								
+								ii) static inner class: 
+															*) The inner class which is declared using static keyword is known as static inner class.
+															*) The static inner class can access only static members of outer class.
+															*) Within the static inner class non-static and static members
+															*) Whenever we want to access inner class members then declare that inner class object inside the out class and access them using inner class object.
+															*) outer class object will be created inside the main class.
+															
+															
+															
+													EX:
+																public class MemberInnerClass {
+
+																		public static void main(String[] args) {
+																			InnerClass obj = new InnerClass();
+																			obj.obj.display1();
+																			obj.obj1.display1();
+																		}
+
+																	}
+
+
+																	class InnerClass{
+																		
+																		int k =90;
+																		static int j = 89;
+																		 
+																		public void dis() {
+																			System.out.println("Display from outer class non-static method");
+																		}
+																		
+																		static public void dis1() {
+																			System.out.println("Display from outer class static method");
+																		}
+																		
+																		class InnerNonStatic{
+																			
+																			int g =90;
+																			static int d = 78;
+																			public void display1() {
+																				dis();
+																				dis1();
+																			}
+																			
+																		}
+																		
+																		
+																		static class InnerStatic{
+																			int d = 90;
+																			static int f = 78;
+																			
+																			public void display1() {
+																				dis1();
+																			}
+																			
+																		}
+																		InnerNonStatic obj = new InnerNonStatic();
+																		InnerStatic obj1 = new InnerStatic();
+																		
+																	}
+																	
+								Q: Why inner class access the members of outer class directly.?
+								A: While object creation the reference of outer class object is binded to the object of inner class automatically by the JVM.
+		
+		
+		2) Local inner class:  The class which is declared inside the method is known as local inner class.
+							   We can declare only non-static local inner class. we can't declare local static inner class why because static keyword is not allowed inside the methods.
+							   Object creation and access of all the members of local inner class can be done inside the method of outer class.
+							   
+							   
+							   EX:
+										
+										
+												public class MainClass {
+
+														public static void main(String[] args) {
+															OuterClass obj = new OuterClass();
+															obj.outClassMethod();
+														}
+													}
+
+
+													class OuterClass{
+														
+														
+														public void outClassMethod() {
+															
+															class localInnerClass{
+																
+																int k = 90;
+																
+																public void display() {
+																	System.out.println("Display from local inner class method");
+																}
+															}
+															localInnerClass obj = new localInnerClass();
+															obj.display();
+														}
+
+													}
+		
+									
+		3) Anonymous inner class: The inner class which is declared without name is known as anonymous inner class.
+		
+						
+							1) anonymous inner class as a class extension: Declare child class without name is known as anonymous inner class as a class extension
+							
+							
+							
+							2) anonymous inner class as a implementation class: Provide implementation class without name is known as anonymous inner class as a implementation class
+							
+							3) anonymous inner class as a method argument: declare inner class as a method argument.
+							
+							
+							EX:
+									public class AnonymousInnerClass {
+
+												public static void main(String[] args) {
+													Parent parent = new Parent() {
+														public void display() {
+															System.out.println("From child class method");
+														}
+
+														public void m1() {
+															System.out.println("From method m1");
+														}
+													};
+													parent.display();
+													// parent.m1(); // error we can't access
+
+													I1 i1 = new I1() {
+
+														@Override
+														public void sum(int k, int j) {
+															System.out.println("Sum of variables: " + (k + j));
+
+														}
+
+													};
+													i1.sum(12, 45);
+													AnonymousInnerClass obj = new AnonymousInnerClass();
+													obj.m2(new I2() {
+														@Override
+														public void sum(int k, int j) {
+															System.out.println("From anonymous inner class as method argument:" + (k + j));
+														}
+													});
+
+												}
+
+												public void m2(I2 i2) {
+													i2.sum(34, 29);
+												}
+
+											}
+
+											class Parent {
+
+												int k = 90;
+
+												public void display() {
+													System.out.println("From parent class method");
+												}
+											}
+
+											interface I1 {
+
+												public void sum(int k, int j);
+											}
+
+											interface I2 {
+												public void sum(int k, int j);
+											}
+		
+		
+anonymous method: the process of declaring a method without name is known anonymous method
+
+Lambda expression: the expression which holds functional interface is known Lambda expression
+
+				Syntax: 
+				
+							(parameter-list)->{
+										// statements
+									};
+
+functional interface: the interface which is having only one abstract method is known as functional interface.
+
+
+
+	EX: 
+									
+							public class AnonymousMethod {
+
+									public static void main(String[] args) {
+										
+										I3 i3 = (int k, int h)->{
+											System.out.println("Sum of variables : "+ (k+h));
+										};
+										i3.sum(56, 67);
+									}
+
+								}
+
+								@FunctionalInterface
+								interface I3{
+									public void sum(int k, int g);
+								}
+
+								interface I4{
+									
+									public void sum(int k, int j);
+									public void display(String str);
+								}
+								
+								
+								
+				Note: whenever we use lambda expression that time extra .class files will not be generated.

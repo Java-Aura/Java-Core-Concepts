@@ -1,0 +1,80 @@
+Abstraction: The process of hiding implementation and providing only the functionality to the user is known as abstraction.
+
+			In java abstraction can be achieved using interfaces and abstract classes.
+			
+		Interface: An interface is a collection of abstract methods.
+		
+		Note: In java based on implementation there are two types of methods.
+		
+					1) Concrete methods: The method which is declared and also defined(writing/having method body).Concrete methods are not ended with semicolon(;)
+					
+					syntax: 
+								<access-modifier> <return-type> <method-name>(zero/more parameters){
+									// set of statements
+									
+								}
+					
+					2) abstract method:  The method which is declared but not defined(no method body). and abstract methods are ended with semicolon (;).
+										 Implementation of abstract methods can be done in implementation classes of interface
+					
+							Syntax:
+										<access-modifier> <return-type> <method-name>(zero/more parameters);
+										
+					We can't create object for interface, because it's an abstract component. we can create object for implementation class and access interface members
+					An interface reference can hold object of implementation class.
+					Within the interface all variables are by default public static and final.
+					Within the interface all the methods are by default public and abstract.
+					We can implement interface using implements keyword
+					We can declare interface using interface keyword.
+					Within the interface all variables must be assigned some value.
+					
+					syntax for interface:
+					
+											interface <interface-name>{
+												//abstract methods.
+												// variables.
+												
+											}
+					
+							
+							
+							Ex:
+							
+										interface I1{
+											public void display();
+											
+										}
+										
+										class Impl1 implements I1{
+											
+											@override
+											public void display(){
+												System.out.println("From IMPL1");
+											}
+										}
+										
+*) In interface we can declare only abstract methods till java7 but from java8 onwards we can also declare default and static concrete methods.
+			*) default concrete methods can be accessed using object of the implementation class.
+			   if any method need not to be implemented by any of it's implementation classes then declare that method as a default method.
+			*) static concrete method can be accessed directly from interface name.
+			   if all of implementation classes uses some common information/logic then declare a static concrete method and write that logic inside static concrete method.
+			
+				
+				
+			Note : If any class implements any interface then that class must be override all the abstract methods declared inside interface.
+				   To achieve multiple inheritance by using interfaces, if multiple interfaces having same methods but the implementation is separated by implementation class. that's why there is no ambiguity.
+				   using interfaces we can achieve 100% abstraction. here we are completely hiding implementation of methods.
+				   A class can't implement two interfaces if the classes having same method name but return-type is different.
+				   
+			Summary:
+						*) The class which implements the interface needs to provide implementation for the methods declared inside interface.
+						*) All the methods declared inside interface are by-default public and abstract.
+						*) All the variables declared inside interface are by-default public static and final, and must assign some value.
+						*) An interface can extend multiple interfaces but the class can extend only one class at a time.
+						*) Use extends keyword to extend interface to interface and class to class.
+						*) Use implements keyword to implement interface.
+						*) declaring interface inside interface is known as inner/ nested interface and for this interface implementation should be provided by inner class of implementation class.
+						*) An interface reference can hold object of implementation class.
+						*) An interface can't implements interface it can only extends.
+						*) From java8 we can declare default or static concrete methods inside interface.based on need the implementation class can override default method.
+						   and static concrete methods will share common logic to all of it's implementation classes.

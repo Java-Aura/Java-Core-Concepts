@@ -1,0 +1,95 @@
+brackets: 	
+			[]: square brackets --> to declare array
+			{}: curly brackets --> to declare blocks or class or methods
+			(): round brackets or parentheses --> to be used in method signature to accept parameters
+			<>: angle brackets --  used as operators in java
+					
+Blocks: A block is a set of statements written inside curly brackets.
+		The blocks will be executed automatically that means blocks calling is not there, where as methods will not be executed automatically,that means we should call them.
+		The blocks are having higher priority than methods
+		the variables declared inside the blocks are local to that block only, so outside the block we can't access.
+
+		1) static block: The block which is declared using static keywords known as static block.
+						 The static block will be executed only once while class loading.
+						 The static block can be used to initialize static variables
+						 The static block will be executed before main method. even though execution start from main method
+						 If we have multiple static blocks then all blocks will be executed as top-down way
+						 Within the static block we can access only static variables
+						 If we load the class multiple times but static block will be executed only once
+		
+		2) instance or non-static block: The block which is declared without static keyword known as instance of non-static block.
+										 The instance block will be executed automatically while object creation(ex: TestClass obj = new TestClass();).
+										 The instance block can be used to initialize instance variables
+										 If we have multiple non-static blocks then all blocks will be executed as top-down way
+										 Within the non-static block we can access both static and instance variables
+										 instance block will be executed for all the objects created for the class.(ex: if we create 10 objects then instance block will be executed 10 times)
+										 
+Variables: 
+			static variables: declared with static keyword and inside class and outside the method.
+			instance variables: declared without static keyword and inside class and outside the method.
+			local variables:  declared inside method without static keyword because static keyword is not allowed inside method.
+			
+			
+Note : The changes made by one object with respect to instance variable, will be reflect to only the same object.
+	   The changes made by one object with respect to static variable, will be reflect to all the objects created for the class.
+	   
+	   
+				Ex for blocks:
+				
+														public class BlocksExample {
+																	
+																	static int number;
+																	
+																	static{
+																		System.out.println("Executed from first static block");
+																		number = 23;
+																	}
+																	static{
+																		System.out.println("Executed from second static block");
+																		number = 63;
+																	}
+																	
+																	public static void main(String[] args) {
+																		System.out.println("Executed from main method");
+																		System.out.println("Value of number: "+number);
+																		System.out.println(BlocksEx.j);
+																		System.out.println(BlocksEx.j);
+																		BlocksEx obj = new BlocksEx();
+																		obj.k = 67;
+																		obj.j  = 90;
+																		BlocksEx obj1 = new BlocksEx();
+																		BlocksEx obj2 = new BlocksEx();
+																		System.out.println(obj2.k);
+																		System.out.println(obj2.j);
+																	}
+
+																}
+
+																class BlocksEx{
+																	
+																	int k;
+																	static int j;
+																	static {
+																		int h =89; // local to this block only.
+																		j =23;
+																		//k=78; // we can't access as it is a intance variable
+																		System.out.println("Executed from static block of BlocksEx: ");
+																	}
+																	
+																	{
+																		//System.out.println(h);
+																		k=45;
+																		j= 89;
+																		System.out.println("Executed from instance block of BlocksEx: ");
+																		
+																	}
+																	
+																	
+																}
+																
+
+static keyword in java: static keyword in java mainly used for memory management
+						Used to share the same variable or method of given class.
+						we can use static keyword to declare variables,methods,blocks and nested/ inner classes(declare class inside class is known as inner class.)
+						if we declare any member as a static that can be common to all objects created for the class and if we change the value by any of object then the changes reflected to all objects.
+						

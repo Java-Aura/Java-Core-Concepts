@@ -1,0 +1,21 @@
+Symbols: special characters in Java which having special meaning.
+
+ [] : this is for declaring Array of elements.
+ ex: int arr[];
+ {} : this is for to declare block of statements.
+   ex:
+			{
+			  // statements
+			}
+ () : can be used to declare methods,constructors.
+		ex: public void method1(){
+		
+		}
+ , : can be used to separate variables, or statements.
+ 
+		ex: int i,k,l;
+ ; : can be used to specify end of the statement.
+		ex: int k =10;
+ * : pointer variable in Java
+	
+	ex: import java.util.*; // all the classes and interfaces are available to current running program

@@ -1,0 +1,14 @@
+Abstract class: A class which is declared using abstract keyword is known as abstract class.
+				It can have zero or more abstract methods.
+				It can have concrete methods.
+				We can't create object for abstract class,because it's an abstract.
+				We can create constructor for the abstract class, and this constructor will be executed while creating object of it's child class.
+				We can create blocks inside abstract class.
+				We can have reference of another object inside abstract class.
+				We can create final methods inside abstract class, but we can't use abstract keyword alongwith final keyword(final with abstract is not allowed).
+				If a child class unable to provide the implementation for all of it's abstract methods then declare that child class as a abstract class, 
+				And give chance to another child classes to provide implementation for rest of the abstract methods.
+				We can declare static methods inside abstract class.
+				inside interface all the methods are by-default abstract but inside abstract we need use abstract keyword for declaring abstract methods.
+				We have to create object for it's child class and access the featurs of abstract class.
+				An abstract class reference can hold object of it's child class.

@@ -1,0 +1,422 @@
+Collections:  Collections is the group of elements collected together.
+			  Collections are growable in nature that means auto-growable.
+			  If we want to represents group of values as single unit then we can go for collections.
+			  Within the collections we can hold non-similar/heterogeneous data.
+			  Collection can hold only object data.Primitives not allowed.
+			  With respect to memory collections are preferred but with respect to performance collections are not preferred.
+			  Every collections class is implemented based some data structures.
+			  
+			  
+			  
+			  Collection: Collection is an interface and all the collection classes implements Collection interface.
+			  
+			  Collections: Collections is a utility class which provide some methods to perform on collection object.
+			  
+			  Note: Collection interface extends java.lang.Iterable.
+					And Every collection class Implements Serializable and Cloneable interface.
+					
+					
+					
+				Collection: Interface.
+							Chile interfaces of Collection Interface are:
+							
+								1)List: 
+										Implementation classes of List interface are:
+											
+											i)ArrayList
+											ii)LinkedList
+											iii)Vector
+											iv)Stack
+								
+								2)Set: 
+										Implementation classes of Set interface are:
+												
+												i) HashSet:
+												ii)LinkedHashSet
+												iii)TreeSet:
+												
+								
+								3)Queue:
+											Implementation classes of Queue interface are:
+													
+													i)PriorityQueue
+													ii)De-Queue
+								
+					
+			  Methods of Collection interface are:
+			  
+					
+						  public abstract int size();
+						  public abstract boolean isEmpty();
+						  public abstract boolean contains(java.lang.Object);
+						  public abstract java.util.Iterator<E> iterator();
+						  public abstract java.lang.Object[] toArray();
+						  public abstract <T> T[] toArray(T[]);
+						  public default <T> T[] toArray(java.util.function.IntFunction<T[]>);
+						  public abstract boolean add(E);
+						  public abstract boolean remove(java.lang.Object);
+						  public abstract boolean containsAll(java.util.Collection<?>);
+						  public abstract boolean addAll(java.util.Collection<? extends E>);
+						  public abstract boolean removeAll(java.util.Collection<?>);
+						  public default boolean removeIf(java.util.function.Predicate<? super E>);
+						  public abstract boolean retainAll(java.util.Collection<?>);
+						  public abstract void clear();
+						  public abstract boolean equals(java.lang.Object);
+						  public abstract int hashCode();
+						  public default java.util.Spliterator<E> spliterator();
+						  public default java.util.stream.Stream<E> stream();
+						  public default java.util.stream.Stream<E> parallelStream();
+			  
+
+
+						public abstract int size(): Can be used to get the size of a collection object.
+						
+						public abstract boolean isEmpty(): Can be used to check whether the collections is empty or not.
+						
+						public abstract boolean contains(java.lang.Object): Can be used check whether the specified object is there in collection object or not. 
+						
+						public abstract java.util.Iterator<E> iterator(): Can be used to iterate over collection object.
+						
+						public abstract java.lang.Object[] toArray(): Can be used to convert collection object to an array.
+						 
+						public abstract boolean add(E): Can be used add element into the collection object.
+						
+						public abstract boolean remove(java.lang.Object): Can be used to remove element from the collection object.
+						
+						public abstract boolean containsAll(java.util.Collection<?>): Can be used check whether the specified  collection object is there inside collection object or not.
+						
+						public abstract boolean addAll(java.util.Collection<? extends E>): Can be used to add collection object into collection object.
+						
+						public abstract boolean removeAll(java.util.Collection<?>): Can be used to remove collection object from collection object.
+						
+						public default boolean removeIf(java.util.function.Predicate<? super E>): Removes the element based on provided predicate.
+						
+						public abstract boolean retainAll(java.util.Collection<?>): Can be used to remove all collection objects except specified collection from the collection object.
+						
+						public abstract void clear(): can be used to clear collection object.
+						
+						public abstract boolean equals(java.lang.Object): To check equality of collection objects.
+	
+						public abstract int hashCode(): Can be used to get hash code of a collection object.
+						
+						public default java.util.Spliterator<E> spliterator(); can be used to iterate over collection object.
+						
+						public default java.util.stream.Stream<E> stream(): can be used to iterate over collection object in terms o Streams.
+						
+						public default java.util.stream.Stream<E> parallelStream(): can be used to iterate over collection object in terms of parallelStream.
+						
+						
+						
+						
+						
+				1)List: List is an interface which extends Collection Interface.
+						Duplicate are allowed.
+						Stores elements based on index.
+						Insertion order is preserved.
+						
+						Methods: 
+						
+								public abstract void add(int index, Object o): can be used to add element at specified index.
+								 
+								public abstract E remove(int index): Removes the element at specified index.
+								 
+								public abstract E get(int index): Get element by index.
+								 
+								public abstract E set(int index, E): Set the element at specified index.
+								
+								public abstract java.util.ListIterator<E> listIterator(): Can be used to iterate over list collection object.
+								
+								 
+							implementation classes of List interface are:
+											
+									i)ArrayList
+									ii)LinkedList
+									iii)Vector
+									iv)Stack
+									
+									
+								i)ArrayList: An ArrayList is the implementation class of List interface.
+											 Duplicates are allowed.
+											 Null insertion is possible
+											 Underlying data structure is growable array.
+											 Default capacity is 10.
+											 Implements RandomAccess interface.
+											 If an ArrayList contains 1000 elements then we can get every element with same time.
+											 
+											 
+											 
+											 
+							Generics: Generics can be used to create class, method or interface that can be used with different type of objects.
+							
+									Note : Generics doesn't work with primitive types.
+									
+									
+									Generic class: The class which can work with any type of data is known as generic class.
+									
+									We can have generic class, generic method and generic interface.
+									
+									syntax: 
+													generic class:
+													
+												class <class-name> <T>{
+												}
+												
+												generic method:
+												
+												<access-modifier> <return-type> <T> <method-name>(T t){
+												}
+												
+												generic interface:
+												
+												interface <interface-name> <T>{
+													
+												}
+												
+									
+									Bounded types: In general The type parameter can accept any type of data. 
+												   But if we want to restrict type parameter to accept only specific data then we can use bounded types.
+									
+									
+													syntax:
+																class <class-name> <T extends type/Number/any user-defined object type>{
+																					}
+								
+								
+								Advantages: using generics we can work with any type of data. which comes under code reusability.
+											to handle runtime classCastException at compile-time. which comes under type checking.
+											And can be used with collections.
+											
+											
+											
+								
+								ii)LinkedList: insertion order is preserved.
+											null insertion possible.
+											underlying data structure is double linked list.
+											LinkedList not implements RandomAccess interface.
+											there is no initial capacity for LinkedList.
+											
+											
+								iii)Vector: Vector is also same like ArrayList
+											The only difference is Vector is  synchronized hence thread safe.
+											
+								iv) Stack: Stack is implementation class of List interface.
+											Stack class extends Vector class, hence this Stack class also synchronized.
+											Insertion order is not preserved
+											Follows LIFO means last in first out.
+											
+											push(): This method can be used to add an element at the top of the stack.
+											pop(): This method can be used to remove element at the top of the stack.
+											peek(): This method can be used to get the element at the top of the stack.
+											We can use all collection iterator for stack.
+											 
+											 
+											
+											
+							Cursors in java: Cursors can be used to retrieve the objects one by one from collection object.
+							
+										i)java.util.Iterator: This iterator can be used for all collection objects.
+										ii)java.util.ListIterator: This ListIterator special for List collection object.
+										iii)java.util.Enumeration: ThisEnumeration can be special for HashTable, Stack, Vector, Properties class.
+										
+										Note: Using Enumeration we can't remove. we can perform only read operations.
+											  Using Iterator we can perform read and remove operations
+											  Using ListIterator we can perform read,write,remove operations.
+											
+											
+											
+								
+								
+						Note: An ArrayList is best choice for retrieval operation,
+							  but if we want to add/insert element into to the middle of the list then ArrayList is not preferable.this is because elements have to move forward for each insertion.
+							  If we want to add element in the middle of the list then we can go for LinkedList. LinkedList is not preferable for retrieval operations.
+							  
+							  
+							  
+							  2)Set:  Set is an interface which extends Collection interface.
+									  Duplicates are not allowed(means if we add duplicate element then existing one will be overrided with new one)
+									  null insertion is possible only once.
+									  Elements are inserted/added randomly.
+									  Set doesn't have any separate methods we have to use collection methods.
+									  
+										
+										Implementation classes of Set interface are:
+												
+												i) HashSet: Underlying data structure is HashTable.
+															Duplicates are not allowed
+															null insertion is possible only once.
+															Elements are added to the HashSet based on hashCode of the objects.
+															
+												
+												ii)LinkedHashSet:  Underlying data structure is HashTable and LinkedList.
+																   Insertion order is preserved.
+													
+
+									SortedSet: SortedSet extends Set interface
+											   Same like Set interface but the difference is it has some methods to order elements.
+									
+												iii)TreeSet: TreeSet implements SortedSet.
+															 Underlying data structure is Balanced tree.
+															 Duplicates are not allowed.
+															 null insertion is not possible raised nullPointerException exception.
+															 Accepts only Comparable objects(The classes which implements Comparable interface are known as comparable objects.
+															 Ex: All String and Wrapper Classes objects are comparable objects.)
+															 If we add other than comparable objects then will get ClassCastException.
+															 Provides natural sorting order(Ascending order).
+															 
+															 
+															 
+									3)Queue: Follows FIFO stands for First in First Out.
+									
+											Methods: 
+														peek(): This method will return the first element in the queue.
+														poll(): This method will remove the first element in the queue and returns it.
+														
+											
+											Implementation classes of Queue interface are:
+													
+													i)PriorityQueue
+													ii)DeQueue
+													
+													
+													
+							Map: Map is an interface which stores objects in the form of key and value pair.
+								 Here key and Value both are objects.
+								 
+							Entry: Entry is an inner interface of Map interface which will arranges the objects in the form key and value pair.
+							
+							
+							Implementation classes of Map interface:
+									
+									1)HashMap:
+									2)LinkedHashMap:
+								
+							SortedMap:
+							           1)TreeMap: 
+									   
+									   
+									
+							1)HashMap:  Underlying data structure is HashTable.
+										Duplicate keys are not allowed but Duplicate Values are allowed.
+										If we try to add duplicate keys then existing object/value will be overrided with new value/object.
+										To check duplicate keys it internally uses equals() and hashCode() methods.
+										null insertion possible only once for key and any number of times for values.
+										Initial capacity is 16. and load factor is 0.75.
+										
+										Methods From Map Interface:
+										
+										  public abstract int size();
+										  public abstract boolean isEmpty();
+										  public abstract boolean containsKey(java.lang.Object);
+										  public abstract boolean containsValue(java.lang.Object);
+										  public abstract V get(java.lang.Object);
+										  public abstract V put(K, V);
+										  public abstract V remove(java.lang.Object);
+										  public abstract void putAll(java.util.Map<? extends K, ? extends V>);
+										  public abstract void clear();
+										  public abstract java.util.Set<K> keySet();
+										  public abstract java.util.Collection<V> values();
+										  public abstract java.util.Set<java.util.Map$Entry<K, V>> entrySet();
+										  public abstract boolean equals(java.lang.Object);
+										  public abstract int hashCode();
+										  public default V getOrDefault(java.lang.Object, V);
+										  public default void forEach(java.util.function.BiConsumer<? super K, ? super V>);
+										  public default void replaceAll(java.util.function.BiFunction<? super K, ? super V, ? extends V>);
+										  public default V putIfAbsent(K, V);
+										  public default boolean remove(java.lang.Object, java.lang.Object);
+										  public default boolean replace(K, V, V);
+										  public default V replace(K, V);
+										  public default V computeIfAbsent(K, java.util.function.Function<? super K, ? extends V>);
+										  public default V computeIfPresent(K, java.util.function.BiFunction<? super K, ? super V, ? extends V>);
+										  public default V compute(K, java.util.function.BiFunction<? super K, ? super V, ? extends V>);
+										  public default V merge(K, V, java.util.function.BiFunction<? super V, ? super V, ? extends V>);
+										  
+										  
+										  public abstract boolean containsKey(java.lang.Object): This method can be used to check whether the key present in map or not.
+										  
+										  public abstract boolean containsValue(java.lang.Object): Can be used to check whether the value is present in Map or not.
+										  
+										  public abstract V get(java.lang.Object): Can be used to get an object based on key.
+										  
+										  public abstract V put(K, V): Can be used to put values into map.
+										   
+										  public abstract java.util.Set<K> keySet(): Can be used to get all keys from the Map object.
+										  
+										  public abstract java.util.Collection<V> values(): Can be used to get all the values from Map object.
+										  
+										  public abstract java.util.Set<java.util.Map$Entry<K, V>> entrySet(): Can be used to get Map object in the form key and value pair.
+										  
+										  public default V getOrDefault(java.lang.Object, V): This method same like get() method but,If we use get() method to get value and if the key is not there then this get() method will return null,
+																							  But using this getOrDefault() we can provide default value is the key is not there.
+																							  
+																
+										  public default V putIfAbsent(K, V): This method will put values only if the key is not present.
+										  
+										  
+								2)LinkedHashMap: Same like HashMap but insertion order is preserved.
+								
+								
+								SortedMap: SortedMap is an interface and Same like HashMap but it will provide default sorting order(ascending order).
+								
+							           1)TreeMap: TreeMap is the implementation class for SortedMap and provides default sorting order.
+												  null insertion is not possible if we add will get nullPointerException.
+												  
+												  
+												  
+								HashTable: HashTable is the legacy collection class.
+										   HashTable is synchronized hence thread safe
+										   null insertion as a key is not possible as well as for value, and if we add then will get nullPointerException.
+										   
+								
+								Note: HashMap has logic to handle null as a key i.e if the key is null then it will store that key at bucket zero.
+									  
+									  
+									
+									
+							Stream API: Stream API can be used to perform intermediate and terminal operations on collection object.
+										Stream is not a data structure i.e it takes values from the collection object.
+										Stream can't change the original collection object.
+										Intermediate operations are lazy(it will return stream) and terminal operations are early(return the result).
+										   
+									   stream(): This method can be used to create stream for the collection object.
+									   
+									  Intermediate operations:
+									  
+										map: map method can be used to map value to the stream.
+										
+										filter: filter method can be used to filter objects based on predicate
+										
+										sort: can be used to sort the stream.
+										
+									  Terminal Operations: 
+									  
+									  
+									  collect: Can be used to return result which is returned by intermediate operation.
+									  
+									  forEach: can be used to iterate over stream elements.
+									  
+									  reduce: can be used reduce elements of stream.
+							
+							SequencialStream: SequencialStream uses single thread to process operations 
+											  We can use stream() method to create SequencialStream
+							
+						    parallelStream:  this parallelStream divides stream into multiple and process them parallelly.
+											 We can use parallelStream() method to create SequencialStream
+							
+							
+							
+							
+							Optional<T> : Optional can be used to handle NullPointerException.
+							
+											empty(): can be used to create empty optional.
+											
+											Optional.of(): can accept only non-null values.
+											Optional.ofNullable(): Can accept both null and non-null.
+											
+							Method-Reference: Method Reference can be used alternative for lambda expression.
+											  We can :: operator to refer method
+							
+												Referring static method:
+												Referring instance method:
+												Referring constructor:
+						    
+						    

@@ -1,0 +1,22 @@
+Class:															Interface:														Abstract class:
+======  														=============													================
+
+1. Can have concrete methods									1. can have abstract, default and static concrete methods		1. Can have abstract and concrete methods.
+2. Can have final methods,final with abstract is not allowed	2. can't declare final methods as abstract methods   			2. can have final methods but final with abstract is not allowed
+3. can have constructors										3. we can't create constructors									3. we can create constructors				
+4. can have blocks												4. we can't create blocks										4. we can create blocks
+5. we can't create abstract methods								5. by-default all the methods are abstract						5. we can create abstract methods
+6. Can have reference of another object							6. Can have reference of another object							6. Can have reference of another object
+7. Can have object of another class								7. Can have object of another class								7. Can have object of another class
+8. declared without abstract keyword							8. declared with interface keyword								8. declared with abstract keyword
+9. can have final and non-final variables						9. by default final 											9. can have both final and non-final
+10. can have static and non-static variables					10. by-default static											10. can have static and non-static variables
+11. can be extended using extends keyword						11. can be implemented using implements keyword					11. can be extended using extends keyword.
+12. Can extend only one class at a time							12. can implements/extends multiple interfaces at a time.		12. can extend only one class at a time.
+13. We can create object										13. We can't create object										13. Can't create object
+14. can be final class											14. we can't final interfaces									14. We can't create final abstract class.
+
+
+Note: if any class has at least one abstract methods then that class should be declared as abstract class.
+	  An abstract class can implements interface
+	  

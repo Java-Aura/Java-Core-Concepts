@@ -1,0 +1,150 @@
+CharSequence interface: Used for representing sequence of characters.
+
+		and the classes which implements charSequence interface are below:
+			
+			
+					
+					String: String is a class in java and represents sequence of characters
+							The objects which are created using String class are immutable objects.that means once declared can't be modified. but we can re-assign.
+							All the String objects are created inside String constant pool area which is separately allocated only for String objects inside heap.
+							 
+							 
+							 Ways to create String objects:
+																i) using String literal: In this case we declare String objects using double quotes.
+																						  syntax or ex:
+																											String str = "java";
+																						 If we create String objects using literal then only object will be created within SCP only.
+																						 if we two String objects having same data then only object will be created and that reference will pointed to all the objects.
+																						 In this case while creating objects jvm always checks for existing objects with same data. if yes jvm will not create new object it will return existing object reference.
+																						 JVM use SCP for memory optimization.
+																
+																ii) using new keyword: If we create string object using new keyword then each time jvm will two objects one is in heap area and another one is in SCP, and reference always points to heap area object.
+																					   If two objects having same data then also it will create two objects.
+																					   If we create String objects using new keyword then jvm will not check for existing object.
+																					   and if we want to move String object from heap area to SCP then we can use intern() method.
+																					   syntax or ex:
+																					   
+																										String str = new String("java");
+																										
+																										
+																						EX:
+																	public class StringWaysOfCreation {
+																			
+																			public static void main(String[] args) {
+																				
+																				
+																				String str = "java"; // using literal
+																				String str1 = "java";
+																				String str2 = "Java";
+																				
+																				System.out.println(str.hashCode());
+																				System.out.println(str1.hashCode());
+																				
+																				System.out.println(str==str1);
+																				System.out.println(str==str2);
+																				String str3 = new String("java"); // two objects within in heap and scp
+																				String str4 = new String("java"); // one object created within in heap and reference returned from scp as java is already existed.
+																				 // two objects will be created one is in heap area and one is in SCP and reference points to heap area object.
+																				String str5 = str4.intern(); // moving or pointing reference from SCP
+																				String str6 = "java";
+																				System.out.println(str5==str6);
+																				
+																			}
+
+																		}
+
+}
+																					
+																
+					
+					
+					StringBuffer: StringBuffer class will generate mutable objects.
+								  The StringBuffer class is a synchronized hence thread safe
+								  The StringBuffer objects are auto growable where as the String objects are fixed in length.
+								  The initial capacity of StringBuffer is 16 and if the capacity is full then it will increase the capacity by doubling.
+								  Use append() method to add values to the StringBuffer class object.
+								  
+								  
+								  synchronized class:
+														The class which is declared using synchronized is known as synchronized cass
+														One thread can access the data of sychronized class at a time.
+														
+					
+					
+					StringBuilder: The objects which are generated using StringBuilder class are mutable.
+								   The StringBuilder class is not sychronized hence not thread safe
+								   The initial capacity of StringBuffer is 16 and if the capacity is full then it will increase the capacity by doubling.
+								   Use append() method to add values to the StringBuffer class object.
+								   
+								   
+						toString():  this method can be used for String representation of an object.
+						
+					StringTokenizer: This StringTokenizer class can be used to break the string into multiple tokens or words.
+					
+							constructors for StringTokenizer: 
+																i)StringTokenizer(String str): in this case it will take the default delimeter as space or tab or next line
+																
+																ii)StringTokenizer(String str, String delimeter): In this case it will use specified delimeter for breaking string into tokens.
+																
+																iii) StringTokenizer(String str,String delimeter,boolean flag): In this case it will use specified delimeter for breaking string into tokens.
+																																if the flag is true then it will consider that delimeter also be a part of tokens.
+																																and default flag is false.
+								hasMoreTokens(): this method can be loop through all the tokens of String.
+								nextToken(): this method can be used to get the tokens of the String.
+								
+								
+			Immuatble Strings:
+								The objecs which are crated using String class Are immutable String. that means once cretaed can't be modified
+								and if we do so one object will be creaed without reference then eligible for garbage collection.
+								
+			Memory allocation of strings:
+											The String objects which are created using literal then only one object will be created within the SCP.
+											The String Objects which are created using new keyword then two objects will be created one is in heap area and one is in SCP and reference points to heap area object.
+											if we want to get the String object from SCP then we can use intern() method.
+											
+											
+											
+			Note:
+					String objects are immutable and fixed in length
+					StringBuffer objects are mutable,auto growable and synchronized hence thread safe
+					StringBuilder objects are mutable, auto growable but not synchronized hence not thread safe.
+					
+					
+			String class methods: 
+			
+									EX:
+										public class StringMethods {
+
+												public static void main(String[] args) {
+													
+													String mailId = "svchar4@gmail.com";
+													
+													String str1 = "java";
+													String str2 ="Java";
+													String str3 = "java";
+													String str = "String MetHods ExaMple";
+													System.out.println(str.toLowerCase()); //to convert into lower case
+													System.out.println(str.toUpperCase()); //to convert into upper case
+													System.out.println(str.charAt(2)); // to get character at specified index.
+													System.out.println(str.replace("e", "s")); // to replace single or multiple characters with specified characters
+													System.out.println(str.replace("MetHods", "class methods"));// to replace single or multiple characters with specified characters
+													System.out.println(str1.equals(str2));// exact match with specified String object
+													System.out.println(str1.equals(str3));// exact match with specified String object
+													System.out.println(str1.equalsIgnoreCase(str2));// ignore case while comparing String objects.
+													System.out.println(str.replaceFirst("e", "k")); // replace only first occurance of the String 
+													System.out.println(str.endsWith("s")); // to check whether the string ends with specified String/character or not.
+													
+													for(int k =0; k<str.length(); k++) { // here length is for finding length of the String.
+														System.out.println(str.charAt(k));
+													}
+													//IntStream chars = str.chars();
+													
+													System.out.println(str.indexOf("g")); // get index number of specified char/string
+													System.out.println(str.indexOf("e"));// get index number of specified char/string
+													System.out.println(str.lastIndexOf("e")); // get last index number of specified char/string
+													if(mailId.endsWith("gmail.com")) {
+														System.out.println("It's the gmail account");
+													}
+												}
+
+											}

@@ -1,0 +1,124 @@
+Types of Variables : variable 
+=============================
+
+Definition : Variable are data holders, which can hold specified data.
+
+	Syntax: 
+				declaration:  <data-type> <variable-name>;
+				assign value: <data-type> <variable-name> = <value>;
+				
+				
+
+variables in Java are two types:
+
+	1) Static Variables: the variables which are declared using static keyword are known as static variables.
+						 static variables can be accessed using class name directly
+						 static variables are available at class level. due to this we can access from class directly.
+						 static variables are created at the starting of the program and destroyed at the end of the execution.
+						 Initialization of static variables is not mandatory.JVM will assign default values.
+						 if we access static variable without class name then the compiler append the class name automatically.
+						 and if we access static variable with object reference then compiler will show warning.
+						 we can initialize static variables inside static block or at the time declaration.
+						 static variables are available for all the objects created for the class.
+						 
+		Note: static variables should not be declared as local(within the method,constructor,block).
+	
+		syntax : static <data-type> <variable-name>;
+		ex: static int k = 20;
+	
+	2) Non-Static Variables:
+								1)instance Variable : 
+								2)Local Variable : 
+
+
+
+
+						1)instance Variable : The variables which are declared inside class but outside the method,constructor,block. The variables which are declare without static keyword are known as instance variables,
+							 instance Variables Can be accessed using Object of the class.
+							 instance variables are created at the time object creation and destroyed when the object is destroyed.
+							 Initialization of instance variables is not mandatory.JVM will assign default values.
+							 we can initialize instance variables inside instance(non-static) block, constructor or at the time declaration.
+							 Instance variables are available for created object and specific to that object only.that means the changes made in object variable will not be effected on another object.
+	
+	
+							syntax :  <data-type> <variable-name>;
+							Ex: int k = 20;
+		
+		2)Local Variable : The variables declared inside the method,constructor or block known as local variables.
+						   Local variables must be assign some value, JVM will not assign default values to local variables.
+						   Local variables are available with the block,constructor or method. that means outside we can't access.
+						   
+						   Syntax : 
+						   
+										public void methodName(){
+											
+											int k =90; //local variable.
+										}
+		
+		
+			
+			
+			Ex:
+			
+															public class TypeOfVariables {
+
+											public static void main(String[] args) {
+												
+												VariableTypes obj = new VariableTypes();
+												obj.nonStaticVariable = "nonStaticVariable value changed for obj";
+												System.out.println(obj.nonStaticVariable); 
+												
+												VariableTypes obj1 = new VariableTypes();
+												System.out.println(obj1.nonStaticVariable);
+												
+												System.out.println(obj.staticVaraible); // accessed with class name
+												System.out.println(VariableTypes.staticVaraible);
+												//System.out.println(VariableTypes.nonStaticVariable); // we can't access by class name as it is a instance variable
+												//System.out.println(obj.methodName().localVariable); // local variables are not available outside of method.
+												obj.nonStaticMethod();
+												obj.staticMethod(); // gives warning
+												VariableTypes.staticMethod();
+												System.out.println(obj.nonStaticInitialization);
+												System.out.println(obj.nonStaticInitializationFromConstructor);
+												System.out.println(VariableTypes.staticInitialization);
+												
+												
+												
+											}
+
+										}
+										class VariableTypes{
+											
+											static String staticVaraible = "staticVaraible"; // static variable
+											String nonStaticVariable = "nonStaticVariable";
+											
+											String nonStaticInitialization;
+											String nonStaticInitializationFromConstructor;
+											static String staticInitialization;
+											
+											{
+												nonStaticInitialization = "nonStaticInitialization from not-static block";
+											}
+											static {
+												staticInitialization = "staticInitialization from static block";
+											}
+											
+											/* constructor*/
+											public VariableTypes() {
+												nonStaticInitializationFromConstructor = "nonStaticInitialization from constructor";
+											}
+											
+											/*non-static method */
+											public void nonStaticMethod() {
+												System.out.println("Non-Static method execution");
+												//static String localStatic = "test";local static can't be possible
+												String localVariable = "localVariable";
+												
+											}
+											/*static method */
+											public static void staticMethod() {
+												//static String localStatic = "test"; local static can't be possible
+												System.out.println("Static method execution");
+											}
+											
+										}

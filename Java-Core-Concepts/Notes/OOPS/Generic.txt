@@ -1,0 +1,39 @@
+Generics: Generics can be used to create class, method or interface that can be used with different type of objects.
+							
+									Note : Generics doesn't work with primitive types.
+									
+									
+									Generic class: The class which can work with any type of data is known as generic class.
+									
+									We can have generic class, generic method and generic interface.
+									
+									syntax: 
+													generic class:
+													
+												class <class-name> <T>{
+												}
+												
+												generic method:
+												
+												<access-modifier> <return-type> <T> <method-name>(T t){
+												}
+												
+												generic interface:
+												
+												interface <interface-name> <T>{
+													
+												}
+												
+									
+									Bounded types: In general The type parameter can accept any type of data. 
+												   But if we want to restrict type parameter to accept only specific data then we can use bounded types.
+									
+									
+													syntax:
+																class <class-name> <T extends type/Number/any user-defined object type>{
+																					}
+								
+								
+								Advantages: using generics we can work with any type of data. which comes under code reusability.
+											to handle runtime classCastException at compile-time. which comes under type checking.
+											And can be used with collections.

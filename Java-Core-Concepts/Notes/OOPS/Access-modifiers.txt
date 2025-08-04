@@ -1,0 +1,13 @@
+ Access-Modifiers : Access-Modifiers are Can be used to reduce or increase the scope of the programming components(class,interface,variable,method etc.)
+						 That means specify the availability of programming components. 
+	
+	 public : The members which are declared using public are can be accessed anywhere from project.
+				Syntax : public <data type/return type> <variable-name/method-name/class-name>{
+				
+				}
+				
+	Private : The Members which are declared using private are can be accessed within the class only. to access these members we have to provide getter methods.
+	
+	Protected : The members which are declared using protected are can be accessed within the package. But in inheritance the child class can access protected members of parent class.
+	
+	default:  The members which are declared using protected are can be accessed within the package. this is the default modifier if we don't provide any one.

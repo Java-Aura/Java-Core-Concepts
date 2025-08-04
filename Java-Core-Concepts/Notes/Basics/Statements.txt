@@ -1,0 +1,310 @@
+Expression : 
+
+An expression made up of data types, variables, operators, and calling methods.
+
+ex: int k =10; // assigning value 
+	Test obj = new Test(); // creating object for the Test class
+	obj.display(); // calling methods
+	String str; // declaring String variable
+
+
+
+Statements : 	Statements are equivalent to sentences. Statements forms a unit of execution. The statements are declared inside flower brackets{(open) }(close)
+
+		syntax :
+		{
+			// statements
+		}
+
+	Declaration statements: These statements can be used to declare the variables
+		ex : int k;
+	
+	Expression Statements: these statements are ended with semicolon ; and can perform some operation.
+			ex: int k =10 // expression
+			k++;
+			k--;
+			int k =23; //  statement
+			
+	ControlFlow Statements : The Statements which are used to control the flow of execution.
+	
+	
+			i) Conditional statements: The statements which can be used to control the flow of execution with some condition known as conditional statements
+			
+			if : can be used to executes statements based on condition
+			
+				Syntax : if(condition){
+								// statements
+							}
+			else : can be used to execute statements if the if condition not satisfied.
+			
+					Syntax : 
+								if(condition){
+									// statements
+								}	
+								else{
+										// statements
+								}
+			else if : if the if condition not true then we can use else if to check for another condition.
+			
+					if(condition){
+									// statements
+								}	
+								
+								else if (condition){
+									// statements
+								}
+								else{
+										// statements
+								}
+			nested if: writing more than one if condition and it will check for all the if condition
+			
+					syntax : 
+					
+							if(condition){
+									// statements
+								}	
+								if(condition){
+									// statements
+								}	if(condition){
+									// statements
+								}	
+							
+
+			nested else if: writing more than one else if condition and it will check else if conditions followed by condition
+						
+								syntax : 
+								
+										if(condition){
+												// statements
+											}	
+											else if(condition){
+												// statements
+											}	else if(condition){
+												// statements
+											}								
+								
+								
+					
+						
+			switch : alternate for if, else if, else. this statement can have multiple execution paths. can be used switch over some value.
+					Note: if none of the case satisfied then default case will be executed. and we can't use relational operators for switch case 
+							if we don't use break and if all the cases are satisfied the all cases will be executed, and there is no need of using break for default statement because it's a last case.
+			
+				Syntax : 
+							int value = 10;
+							switch(value){
+							
+							case <value>: 
+							// statements
+								break;
+								
+							case <value2>:
+							// statements
+							break;
+							
+							default:
+							// statements
+							
+							}
+							
+					EX:
+					
+								public class ConditionlStatements {
+
+										public static void main(String[] args) {
+											
+											Scanner sc = new Scanner(System.in);
+											System.out.println("Enter age");
+											int age = sc.nextInt();
+										
+											/*Conditional statements:*/
+											if(age>=18) {
+												System.out.println("User can able to vote");
+											}
+											else if(age>=17 && age<18) {
+												System.out.println("User has to wait for one more year");
+											}
+											//nested else if
+											else if(age<16) {
+												System.out.println("User is a child");
+												
+											}
+											else {
+												System.out.println("User can't vote");
+											}
+											
+											//nested if
+											
+											if(age>18) {
+												System.out.println("nested age greater than 18");
+											}
+											if(age>=18) {
+												System.out.println("nested age greater than or equals to 18");
+											}
+											if(age<18) {
+												System.out.println("nested age less than 18");
+											}
+											switch (age) {
+											case 18: 
+													System.out.println("switch case: user can vote");
+													break;
+											case 17:
+												System.out.println("switch case: user has to wait for one more year");
+												break;
+											case 15:
+												System.out.println("switch case: user is a child");
+												break;
+											default:
+												System.out.println("none of the case satisfied");
+											}
+											
+										}
+
+									}
+		
+		ii) Looping Statements: can be used to iterate(retrieve) array or collections over some condition
+		
+			for :  this statement can be used iterate over a range of values until the particular condition is true.
+			
+				Syntax:  for(<data-type> <variable-name> = <initialization>; <condition>; <inc/dec>){
+				 // statements
+				 
+				 }
+				 
+			foreach/ extended for loop: same as for loop but we can't add any conditions while iterating
+					
+					Syntax: for(<data-type> <variable-name> : array/collection object){
+					// statements
+					}
+			
+			while: this statement can be used to execute set of statements until the particular condition is true.
+			
+			Syntax: 
+			
+						while(condition){
+						// statements
+						}
+			
+			do while:  this statement is like while statement but while statement will be executed if the condition is true,
+					   but do while will executes the statements at least once if the condition is true or false.
+					   
+					   Syntax:
+					   
+									do{
+									// statements
+									}
+									while(condition);
+									
+									
+					EX:
+					
+															
+									public class LoopingStatements {
+
+											public static void main(String[] args) {
+												
+												Scanner sc = new Scanner(System.in);
+												System.out.println("Enter number to print table");
+												int num = sc.nextInt();
+												System.out.println("printing table from for loop");
+												for(int i=1;i<=10;i++) {
+													System.out.println(num+ "*"+ i + " = "+ num*i);
+												}
+												int arr[] = new int[] {12,23,45};
+												int arr1[] = new int[] {512,235,453};
+												
+												//traditional for loop  iterate specific values
+												for(int k= 0; k<2;k++) {
+													System.out.println(arr[k]);
+												}
+												// enhanced for loop iterate all values
+												for(int j: arr1) {
+													System.out.println(j);
+												}
+												
+												int n=1;
+												System.out.println("printing table from while loop");
+												while(n<=10) {
+													
+													System.out.println(num+ "*"+ n + " = "+ num*n);
+													n++;
+												}
+												
+												System.out.println("printing table from  do while loop");
+												System.out.println("value of n after while loop execution = "+ n);
+												
+												while(n<=10) {
+													
+													System.out.println(num+ "*"+ n + " = "+ num*n);
+													n++;
+												}
+												
+												do {
+													System.out.println(num+ "*"+ n + " = "+ num*n);
+													n++;
+												}
+												while(n<10);
+												
+												do {
+													System.out.println(num+ "*"+ n + " = "+ num*n);
+													n++;
+												}
+												while(n<=20);
+														
+
+											}
+
+										}
+			
+		
+		iii) Branching statements: These statements can be used to break/ continue the current execution of the program.
+		
+				break: will stop the current execution of the program
+				
+				continue:  will skip the current execution and will continue with next execution of statements
+				
+				return : can be used to return some value after execution.
+				
+				System.exit(0): to stop/terminating current execution of the program.
+				
+				
+				EX:
+				
+								public class BranchingStatements {
+
+									public static void main(String[] args) {
+										
+										BranchingStatements obj = new BranchingStatements();
+
+										obj.printTable();
+										
+									}
+									
+									public int getNum() {
+										Scanner sc = new Scanner(System.in);
+										System.out.println("Enter number to print table");
+										int num = sc.nextInt();
+										return num;
+									}
+									
+									public void printTable() {
+										int num = getNum();
+										for(int i=1;i<=10;i++) {
+											System.out.println("value of i = "+i);
+											if(i==3)
+											{
+												continue;
+												
+											}
+											else if(i==2) {
+												System.exit(0);
+											}
+											System.out.println(num+ "*"+ i + " = "+ num*i);
+											if(i==5) {
+												break;
+											}
+											
+										}
+									}
+
+								}

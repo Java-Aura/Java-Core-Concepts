@@ -1,0 +1,213 @@
+Exceptions in java:
+						
+						*) While executing java program there might be some interruption.
+						
+						there can be two types of interruption in java:
+						
+						
+							1) Exception: Exeception are the unwanted or unexpected events that disturbs the normal flow of the application.
+										  If the interruption are handled then we can call them as exceptions.
+										  ex: nullPointerException,SQLException IOException etc.
+										  
+										  
+							
+							2) Error: Error are the unwanted or unexpected events that disturbs the normal flow of the application.
+									  If the interruptions can't be handled then we can call them as errors.
+									  
+									  EX: virtualMachineError, outOfMemoryError etc.
+									  
+									 
+							Interruptions can be happen for user inputs or system failures.
+							
+							Note: All the errors and exceptions are raised at runtime. that means while execution of the program.
+
+						Exception handling : the process of handling exceptions is known exception handling.
+											 To hande exception we can use try block, catch block, finally block.
+											 
+											 
+											 try : we can place the set of statements which might raise exceptions
+												   try block can have the code which can raise exceptions.
+												   
+												   
+											catch: catch block will have the logic to handle exception raised by try block.
+												   catch block will execute only if the exception raised in try block.
+											
+											
+											finally: In general finally block will have the statements for closing resorces which are opened in try block.
+													 finally block will execute in both cases(even exception raised or not)
+													 
+													 
+							
+								EX:
+								
+										public class ExceptionExample1 {
+
+												public static void main(String[] args) {
+
+													new TestExecption().display();
+												}
+
+											}
+
+											class TestExecption{
+												
+												String str = "tEST";
+												
+												public void display() {
+													Scanner sc = new Scanner(System.in);
+													System.out.println("Enter user input");
+													
+												try {
+													try {
+														int input = sc.nextInt();
+														System.out.println(input);
+													} catch (Exception e) {
+														System.out.println("Exception while printing user input");
+													}
+													System.out.println(str.toLowerCase());
+												}
+												catch (Exception e) {
+													System.out.println("Exception while printing str");
+												}
+												finally {
+													sc.close();
+													System.out.println("Finally block");
+												}
+													System.out.println("Method excution completed");
+												}
+												
+												
+											}
+
+
+			Exception hierarchy:
+			
+			
+									Throwable: Throwable is the class which is super/parent class for all the exceptions and errors.
+									
+									Exception: Exception is the class which extends throwable class and super class for all the exceptions.
+									
+									Error : Error is the class which extends throwable class and super class for all the errors.
+									
+									
+									
+									Exceptions:   Exceptions are events which disturbs normal flow of the application.
+									
+									
+											types of exceptions:
+											
+											1) Built-in exceptions: The exceptions which are already definedin java known as built-in exceptions
+											
+											2) User-defined exceptions: the exceptions which declared and defined by programmer known as user-defined exceptions.
+											
+											
+									1) Built-in exceptions: 
+											
+											1)checked exceptions / compile-time:
+											
+											2)unchecked exceptions/ runtime:
+									
+									
+									1)checked exceptions / compile-time: The exceptions which are checked/identified by compiler are known as checked exceptions.
+									
+																		 Ex: IOException, SQLException,InterruptedException,ServletException etc.
+																		 
+																		 
+																		 
+									2)unchecked exceptions/ runtime: The exceptions which are not checked or identified by compiler known as unchecked exceptions.
+
+																		Ex: NullPointerException, ClassCastException,ArrayIndexOutOfBoundException,ArithmeticException etc.
+
+									
+												
+												
+							
+									Methods to print exception information:
+									
+									toString(): this method will print name and desciption of the exception.
+									
+									printStackTrace(): this method will print name,desciption and location of exception(location means where the exception raised in program).
+									
+									getMessage(): this method will print only desciption of the exception.
+									
+									
+					How JVM will hanle an exception:
+																	* if the exception occured inside the method then than will create exception object and handover it ot run time system(JVM).
+																	* this exception object will have the information like name, desciption and current state of the program.
+																	* creating exception object and handover it runtime system(JVM) is known as throwing an exception.
+																	* there might be list of methods that had been called to get  the method where an exception occured. we can call this list as call stack.
+																	
+																	After above steps jvm will do the following procedure.
+																	
+																	* Jvm will searches the class stack to find the method that contains block of code that can handle exception. this code we can it as exception handler.
+																	* JVM will searches from the method in which the exception is occured and proceeds through the call stack in reverse order.
+																	* if JVM finds appropriate handler the it will give that exception object to it. heare the appropriate means type of exception object thrown and exception object matches.
+																	* if JVM couldn't find appropriate handler then it will give that exceptio object to DefaultExceptionHandler.
+																	* DefaultExceptionHandler will have the information about exception like below.
+																	
+																	
+																			Exception in thread " thread or method info" name of the exception: Description
+																			// call stack
+									
+																			and it will stop the program abnormally.
+																			
+																		
+
+
+								Note: try block can't be declared alone. try should be declared along with catch block or with finally block or will both catch and finally blocks.													
+								
+								try with multi catch block: for single try block we can declare multilevel catch blocks.
+																 for multilevel catch blocks we should follow child type of exception object to parent type of exception object.
+									
+									
+				Note: Finally block will always executes even if exception raised or not. 
+									  The only situation when the finally block will not be executed is system shutdown or jvm shutdown.
+									  If there is a return statement inside try block then first finally block will be executed then return statement.
+									  And in general or it's recommanded to can use finally block for closing resources which are opened in try.
+									
+									
+									
+								Throws keyword: We can use throws keyword to throw compile-time exception to be handled by caller method.or
+												Delegate or forward the exception from method to caller method.
+												We can also use throws keyword to throw runtime exception but there is no impact of using throws keyword for runtime.
+												This throws keyword can be used along with method signature.
+												We can throw multiple exceptions using throws keyword.
+												
+								try with resources: the resources which are opened along with try block are auto closable.
+													try with resources is alternative for finally block.	
+			
+
+			   
+			   
+					User-defined/customized exceptions: the exceptions which are defined by programmer are known as user-defined exceptions.
+																	Creating our own exception object and giving it to runtime system is known as throwing a customized exception
+												
+									
+																Steps to create customized exceptions: the user-defined class must extends Exception/RuntimeException class.
+																									   the user-defined class must be declared with constructor which accepts String as a argument to pass our own message to exception object.
+																									   call super class constructor to pass customized messages to parent class exception object.
+																									   use throw keyword to deligate user-defined exception object to runtime system.
+			
+
+																Note: In case of built-in exceptions the compiler will create the exception object and handover it runtime system.
+																	  But in case of user-defined exceptions we need to create our own exceptions object and handover it runtime system.
+																	  to deligate or handovering user-defined exception object we need to use throw keyword.
+			   
+					
+						throws: can be used to throw only built-in exceptions.
+								we can throw multiple exceptions at a time.
+								throws keyword can be used along with method signature
+								can be used to deligate checked exceptions.
+								
+						throw: can be used to throw only runtime exceptions or user-defined exceptions.
+							   can be used only inside the method.
+							   can be used to throw only one exception at a time.
+							   
+
+					Exceptions in inheritance: 			
+					
+											* if the parent class method throws any exception then child class overrided method may or may not throws the exception.
+											* If the parent class method throws any exception then child class overrided method can throws same type of exception or it's child type of exception.
+											* If the parent class method doesn't throwing an exception then child class overrided method also shouldn't throw any checked exception					
+											* If the parent class method doesn't throwing an exception then child class overrided method can throw any runtime exception						
+					

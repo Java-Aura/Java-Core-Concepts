@@ -1,0 +1,118 @@
+Java Programming Format
+============================
+
+Every Java programmer should follow the coding format.
+
+	1)Documentation Section:
+		this is the section we can add comments for methods.variables etc. which makes the programmer more readable 
+		i) Single line comments ex: // single line comments
+		ii) Multi line comments ex : /* Multiline comment
+		iii) Documentation comments ex: /** documentation comments */
+		
+		Note: Compiler will ignore the comments.
+		
+	2)Package Section : In Java we can collect multiple classes as collection is known as package. we can declare package using package keyword.
+		syntax: package <package-name>;
+		
+	3)Import Section : In Java we have predefined classes if we want to use them then we have to import in out programme.
+						*) import members from one package into current running program
+						syntax: 
+								import <package-name>.<class-name>.method-name();
+	
+	4)Interface Section : in this section we can declare interface(interface can be used to achieve multiple inheritance in Java)
+							
+							syntax:
+										interface <interface-name>;
+							
+	5)Class section : in this section we can declare classes. we can declare n number of classes in a single Java file.
+			
+						syntax: 
+						
+									class <class-name>{
+									
+									}
+	
+	
+	6)Main method class  : In Java execution starts from main method.
+		signature : public static void main(String a[]){
+															}
+															
+																	
+	7) methods: is a function which execute some logic
+
+				syntax: 
+							<access-modifier> <return-type> <method-name>(){
+							
+							}
+							
+
+Simple java program:
+
+
+			public class MainClass{
+			
+			public static void main(String args[]){ 
+			
+			System.out.println("First java program");
+			
+			}
+
+			}
+			
+			main method signature: main method signature is the default signature and with out main method we can't run execute java program.
+				public: makes the main available within the project 
+				static: Can be accessed with class name directly
+				void: return nothing, the main method should not return any value.
+				main: method name
+				String[]:  the main method should be declared with string array which is ready to accept any type of data
+				
+			System.out.println: 
+			
+			System: System is the class available from java.lang package. and this System class has three fields
+			
+					1)in:  can be used to read input from the user/keyboard.
+					2)out: can be used to display the message on console
+					3)err: can be used to display error messages.
+					
+			println() : can be used print message on console. this method print the message and cursor waits in the next line
+			print(): this method print the message and cursor waits in the same line.
+			
+		Ex:	public class SystemClass {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter message:");
+		String message = sc.nextLine();
+		System.out.println(message);
+
+	}
+
+}
+
+Scanner: is the class from java.util package and can be used to read data from keyboard or from any file resource.
+
+			Scanner sc = new Scanner(System.in);
+			String message = sc.nextLine(); // for reading string type of data.
+			int i = sc.nextInt(); // to read integer type of data.
+
+2)Package Section : In Java we can collect multiple classes as collection is known as package. we can declare package using package keyword.
+		syntax: package <package-name>;
+		
+		user-defined packages: the packages which are declared by the programmer 
+		
+		syntax: package <package-name>;
+		
+		pre-defined packages: The packages which are already defined in java programming language
+							
+							Ex: 
+								1)java.lang(language): is the default package, will have all the classes and methods required for default java program.
+								2)java.util(utility package): 
+								3)java.net(networking):
+								4)java.io(input and output):
+								
+Note : to see the methods available from class use the below syntax
+		
+		syntax: javap java.util.Scanner
+		
+				javap: is the keyword to see the methods from the class

@@ -1,0 +1,136 @@
+Polymorphism: Means having many forms
+
+			1) static/compile-time polymorphism: method resolution done at compile-time and we can achieve using method overloading.
+			
+												Method overloading: The process of declaring methods with same name with different parameters is known method overloading
+																	Same method signature but parameter list is different.
+																	it can be done in same class.
+																	two methods should be different by at least parameter type or length of the parameters that the method can accept.
+																	
+														EX:
+														
+																public class MethodOverLoading {
+																		public static void main(String[] args) {
+																				
+																			Scanner input = new Scanner(System.in);
+																			
+																			System.out.println("Enter number");
+																			int num = input.nextInt();
+																			OverloadedMethods obj = new OverloadedMethods();
+																			obj.printTable(num);
+																			System.out.println("Enter number to print table based on length:");
+																			int num1 = input.nextInt();
+																			System.out.println("Enter length:");
+																			int length = input.nextInt();
+																			obj.printTable(num1, length);
+																			System.out.println("Enter number to print table based on length and message:");
+																			int num2 = input.nextInt();
+																			System.out.println("Enter length:");
+																			byte length1 = input.nextByte();
+																			System.out.println("Enter mssage to display:");
+																			String message = input.next();
+																			obj.printTable(num2, length1, message);
+																		}
+																	}
+
+
+																	class OverloadedMethods{
+																		
+																		
+																		public void printTable(int num) {
+																			for(int i =1; i<=10;i++) {
+																				System.out.println(num+" X "+i + " = "+num*i);
+																			}
+																		}
+
+																		public void printTable(int num, int length) {
+																			for(int i =1; i<=length;i++) {
+																				System.out.println(num+" X "+i + " = "+num*i);
+																			}
+																		}
+																		
+																		public void printTable(int num, byte length) {
+																			for(int i =1; i<=length;i++) {
+																				System.out.println(num+" X "+i + " = "+num*i);
+																			}
+																		}
+																		
+																		public void printTable(int num, byte length,String message) {
+																			System.out.println("Message from user:" + message);
+																			for(int i =1; i<=length;i++) {
+																				System.out.println(num+" X "+i + " = "+num*i);
+																			}
+																		}
+																	}
+																				
+					
+			
+			2) dynamic/runtime polymorphism: Also known as dynamic method dispatch. methods resolved at runtime instead of compile-time.
+											 Declare methods with same method signature is known method overriding.
+											 method overriding can be done from parent class to child class.
+											 If the method parent class method doesn't fullfill the requirement of child class then override that method in child class.
+											 While overriding if parent class method is not overrided by child class then the parent class method will be executed otherwise child class method is called(executed).
+											 While overriding we can't reduce the scope of the parent class method
+											 The child class can access protected members of the parent class even though the scope of protected members is within the package.
+											 The parent class reference can hold child class object but using parent class reference we can access only parent class variables.
+											 
+											 
+					EX:
+					
+												public class MethodOverriding {
+
+														public static void main(String[] args) {
+															Parent parent = new Parent();
+															parent.printTable(23);
+															Child child = new Child();
+															child.printTable(12);
+															Parent parent1 = new Child();
+															//System.out.println(parent1.k);// parent class reference can access only parent class variables.
+															parent1.display();
+														
+														}
+
+													}
+
+
+													class Parent extends ProtectedMembers{
+														
+														int j =89;
+														
+														protected void printTable(int num) {
+															System.out.println(protectedMessage);
+															// System.out.println(defaultMessage); can't be accessed as the variable is default one
+															for(int i =1; i<=10;i++) {
+																System.out.println(num+" X "+i + " = "+num*i);
+															}
+														}
+														
+														public void display() {
+															System.out.println("I'm from parent class..!");
+															
+														}
+														
+													}
+
+													class Child extends Parent{
+														
+														int k =90;
+														
+														public void printTable(int num) {
+															System.out.println("Enter length: ");
+															Scanner sc = new Scanner(System.in);
+															int lenth = sc.nextInt();
+															for(int i =1; i<=lenth;i++) {
+																System.out.println(num+" X "+i + " = "+num*i);
+															}
+														}
+														
+														public void display() {
+															System.out.println("I'm from child class..!");
+															
+														}
+													}
+
+											 
+			
+						Note: protected members(members which are declared using protected keyword) can accessed out side of the package by child class.

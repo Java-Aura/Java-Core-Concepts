@@ -1,0 +1,288 @@
+1)class: class is the template or structural layout from which objects are created.
+	 
+			Syntax: 
+						<access-modifier> class TestClass{
+							
+							// set of statements
+							
+						}
+			Allowed access-modifiers for the class are public and private. but private classes are declared as inner class.
+						
+						Ex: 
+								class Test{
+
+									private class InnerClass{
+		 
+										 }
+									}
+						
+			Class represents the set of properties or methods that are common to all the objects created for it.
+
+								  
+					
+			Properties: Means variables or data.
+			
+						Variables: Variables are the data holders and can be used to perform some operation.
+								
+								Q: Why to declare variable?
+								Ans: if some data is shared by multiple methods then declare variable and hold that data into that variable. so that all the methods can access
+								
+							Two types of variables we have in java.
+								i)static: declared with static keyword and accessed directly by class name
+								ii)non-static: declared without static keyword and accessed by object
+											   non-static divided into two types.
+											   i)instance: declared inside class outside method
+											   ii)local: declared inside method
+									
+										
+			Methods: The functions which are declared inside the class are known as methods.
+					 Function: Which perform some task or do some operation known as function
+					 Methods can be declared for reusability
+					 
+					 Syntax: <access-modifier> <return-type> <method-name>(Parameter list){
+						 
+					 }
+					 method signature: from the above syntax return-type is not a part of method signature but every method should be declare with return-type.
+									  
+					 return-type: Can be used to specify what type of data the method can return after it's execution.
+								  if we don't want to return the value after execution then declared that method as void. void means return nothing.
+					 Note: methods can be declared only inside class. and we can any number of methods
+					 
+					 Parameter: Parameters are the data carriers which carry the data from one method(method frame) to another method(method frame).
+					 
+					 Parameter list: list of parameters that method can accept. while calling a method we should pass same type or it's child type of parameters to the method it accepts 
+					 
+					Methods in java are two types:
+						
+						i) Non-Static Methods.
+						
+						ii) Static Methods.
+						
+						i) Non-Static Methods: The methods which are declared without static keyword are known as non-static methods.
+											   These non-static methods will get the memory within the heap area while object creation.
+											   So that we can access non-static methods by creating object for the class.
+											   
+										Object: Object is a physical existence of a class.
+												A smallest memory created as part of heap area, which holds non-static members of the class.
+												Object can have states and behaviours of the class
+												states: all the variables declared inside the class.
+												behaviours: all the methods declared inside the class
+												
+												Syntax for creating object:
+																			<class-name> <object-reference-name> = new <class-name>();
+																			
+																			new: new is the keyword to create the object for the class.
+																			
+																			ex: TestClass obj1 = new TestClass(); // object is created for TestClass and name of the object is obj1.
+															
+																		Note: object reference should follow the same variable naming conventions.
+																		
+												Q: Why to create object?
+												Ans: To access non-static members of the class.
+												
+										
+									
+						ii) Static Methods: The methods which are declared with static keyword are known as static methods.
+											These static methods will get the memory within the method area while class loading.
+											Q: when the class will be loaded?
+											Ans: When the components of the class are used.
+											So that we can access static methods directly by class name.
+										
+											
+						
+										EX:
+												public class MethodTypes {
+
+														public static void main(String[] args) {
+															Methods.printTableByStaticMethod();
+															Methods methods = new Methods(); // creating object
+															System.out.println(methods.hashCode());
+															methods.printTableByNonStaticMethod();
+															
+
+														}
+
+													}
+
+
+													class Methods{
+														
+														int k = 90;
+														static int j =89;
+														public void printTableByNonStaticMethod() {
+															Scanner sc = new Scanner(System.in);
+															System.out.println("Enter number to print table from non-static method");
+															int num = sc.nextInt();
+															for(int i=1;i<=10;i++)
+															{
+																System.out.println(num+"*"+i+" = "+num*i);
+															}
+														}
+														
+														public static void printTableByStaticMethod() {
+															Scanner sc = new Scanner(System.in);
+															System.out.println("Enter number to print table from static method");
+															int num = sc.nextInt();
+															for(int i=1;i<=10;i++)
+															{
+																System.out.println(num+"*"+i+" = "+num*i);
+															}
+														}	
+														
+														
+													}	
+						Note: Static methods can access only static members of the class.
+							  And non-static methods can access both static and non-static members of the class.
+								
+						
+						Bases on the return-type the methods are categorised into two types.
+											
+											i) method with return type: if the method returns some value after it's execution known as method with return-type
+																		Note: Returned value will come back to the method call and we should hold the value in separate variable of same or it's higher data type.
+																		
+													Method call: calling a method. methods will not be executed automatically we should call them.
+											
+											ii) method without return-type: if the method doesn't returns any value after it's execution known as method without return-type
+																			if we don't want to return value after method execution then declared that method with void as a return type.
+																			
+								EX:
+								
+									public class MethodsBasedOnReturnTypes {
+
+														public static void main(String[] args) {
+															
+															ReturnTypeMethods obj = new ReturnTypeMethods(); // object created
+															obj.methodWithoutReturnType();
+															int num = obj.getNumberToPrintTable();
+															for(int i=1;i<=10;i++)
+															{
+																System.out.println(num+"*"+i+" = "+num*i);
+															}
+														}
+
+													}
+
+													class ReturnTypeMethods{
+														
+														
+														public int getNumberToPrintTable() {
+															
+															Scanner sc = new Scanner(System.in);
+															System.out.println("Enetr number to print tables: ");
+															int num = sc.nextInt();
+															return num;
+															
+														}
+														
+														public void methodWithoutReturnType() {
+															Scanner sc = new Scanner(System.in);
+															System.out.println("Enetr number to print tables from methodWithoutReturnType: ");
+															int num = sc.nextInt();
+															for(int i=1;i<=10;i++)
+															{
+																System.out.println(num+"*"+i+" = "+num*i);
+															}
+														}
+													}
+
+						Bases on the parameters the methods are categorised into two types.
+											i) Method with parameter: Declaring a method with parameter list is known as Method with parameter
+																	  While parametrized method call we should pass the parameters to the method with same or it's child type of data
+											ii) method without parameter: Declaring a method without parameter list is known as Method without parameter
+											
+											
+						Varargs: variable args that means passing variable number of arguments.
+								 varargs is same as the passing array of parameters to method.
+								 Varargs should be declared as a last argument in method signature and can only be one varargs in method signature
+						
+						Syntax: 
+						
+									<access-modifier> <return-type> <method-name>(<data-type> ...<variable-name>){
+										
+									}
+									
+									EX:
+											public void printTable(int lentgh,int ...numbers) {
+												for(int num : numbers) {
+													for(int i=1;i<=lentgh;i++)
+													{
+														System.out.println(num+"*"+i+" = "+num*i);
+													}
+												}
+												
+											}
+											
+									...numbers here three dots tells the compiler that varargs is used and these values should be store in array refereed by numbers.
+									
+		Note: While compilation compiler will look for method signature and if two methods having same method signature then compiler will through exception. 
+			  method signature: access-modifiers, method-name and parameter list comes as part of method signature.
+			  So while declaring methods we should differentiate them at least by parameter types or number of parameters.
+			  
+			  
+			  user defined methods: methods defined by user or programmer.
+			  
+			  predefined methods: methods are already defined in java.
+									 ex:
+											Scanner sc = new Scanner(System.in);
+											sc.nextInt();// nextInt() is predefined method to read int type of data from user
+											
+											
+											
+									EX:
+										public class MethodsBasedOnParameter {
+
+												public static void main(String[] args) {
+
+													MethodsTypes obj = new MethodsTypes();
+													short num = 12;
+													obj.printTable(num, 20);
+													obj.printTable();
+													obj.printTable(10, new int[] { 17, 19 });
+													obj.printTableVargs(10, 17,19);
+
+												}
+
+											}
+
+											class MethodsTypes {
+
+												public void printTable(int num, int lentgh) {
+													for (int i = 1; i <= lentgh; i++) {
+														System.out.println(num + "*" + i + " = " + num * i);
+													}
+												}
+
+												public void printTable() {
+													Scanner sc = new Scanner(System.in);
+													System.out.println("Enetr number to print tables from methodWithout parameters: ");
+													int num = sc.nextInt();
+													for (int i = 1; i <= 10; i++) {
+														System.out.println(num + "*" + i + " = " + num * i);
+													}
+												}
+
+												public void printTableVargs(int lentgh, int... numbers) {
+													for (int num : numbers) {
+														for (int i = 1; i <= lentgh; i++) {
+															System.out.println(num + "*" + i + " = " + num * i);
+														}
+													}
+
+												}
+
+												public void printTable(int lentgh, int[] numbers) {
+													for (int num : numbers) {
+														for (int i = 1; i <= lentgh; i++) {
+															System.out.println(num + "*" + i + " = " + num * i);
+														}
+													}
+
+												}
+											}
+											
+			  Coding Rules for method with parameters and method with return type:
+					
+					i)The data type of parameters used in method call must be equal or it's lower type to the parameters declared in method signature.
+					ii) The return type of the method must be equal to the type of the method returns.
+					iii) The data type of the variable which holds the returned value while method call must be equal to data type of the method returns or it's higher type.
+					

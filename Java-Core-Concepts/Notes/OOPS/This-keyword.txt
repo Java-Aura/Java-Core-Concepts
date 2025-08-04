@@ -1,0 +1,215 @@
+"this" keyword in java: this is the reference variable which refer current class object.
+
+						1) use this keyword to access instance members of the class.
+						
+								
+							public class ThisKeywordExample {
+
+									public static void main(String[] args) {
+									System.out.println("Execution started.!");
+									This obj = new This();// zero-argument constructor
+									This obj1 = new This(12,34);
+									obj.displayInstanceVariable();
+									obj1.displayInstanceVariable();
+
+									}
+
+								}
+
+
+								class This{
+									
+									int k;
+									int j;
+									This(){
+										
+									}
+									This(int k , int j){
+										this.k = k;
+										this.j = j;
+									}
+									
+									
+									
+									public void displayInstanceVariable() {
+										System.out.println("Value of k : "+k);
+										System.out.println("Value of j : "+j);
+									}
+								}
+													
+													
+						2) use this keyword to access current class constructor: 
+																				Note: The constructor call must be the first statement within the constructor.
+																				
+																		Ex:
+																		
+									public class ThisKeywordForCurrentClassConstructor {
+
+											public static void main(String[] args) {
+												System.out.println("Execution started.!");
+												
+												ThisConstructor obj = new ThisConstructor();
+												obj.displayInstanceVariable();
+											}
+
+										}
+
+
+										class ThisConstructor{
+											
+											int k;
+											int j;
+											String str;
+											
+											/* default constructor or zero-arguments constructor*/
+											ThisConstructor(){
+												this(12,34);
+											}
+											
+											
+											ThisConstructor(int k, int j) {
+												this(56,78,"Java");
+												/*
+												 * this.k = k; this.j = j;
+												 */
+														
+											}
+											
+											ThisConstructor(int k, int j,String str) {
+
+												this.k = k;
+												this.j = j;
+												this.str = str;
+
+											}
+											
+											public void displayInstanceVariable() {
+												System.out.println("Value of k : "+k);
+												System.out.println("Value of j : "+j);
+												System.out.println("Value of str : "+str);
+											}
+											
+											
+										}
+													
+						3)use this keyword to call current class instance method:
+						
+								 Note: For calling current class methods this keyword is not needed why because the compiler will automatically add this keyword.
+									   But to dedifferentiate we need to use. 
+						
+									EX:
+									
+										public class ThisKeywordToCallInstanceMethod {
+
+											public static void main(String[] args) {
+												
+												CallIntsanceMethod obj = new CallIntsanceMethod();
+												obj.callInstanceMethod();
+
+											}
+
+										}
+
+										class Test{
+											
+										public void instanceMethod() {
+												
+										System.out.println("From Test class");
+										}
+
+										}
+
+										class CallIntsanceMethod extends Test{
+											
+											
+											public void callInstanceMethod() {
+												
+												this.instanceMethod();
+												super.instanceMethod();
+											}
+											
+											public void instanceMethod() {
+												System.out.println("From CallIntsanceMethod class");
+											}
+											
+										}
+										
+						4) use this keyword as a method argument: 
+						
+								Ex: 	
+								
+											public class ThisKeywordAsMethodArgument {
+
+													public static void main(String[] args) {
+														
+														Class2 class2 = new Class2();
+														class2.display();
+													}
+
+												}
+
+
+												class Class1{
+													
+													public void display(Class2 class2) {
+														
+														System.out.println("Display from class1");
+													}
+												}
+
+												class Class2{
+													
+													Class1 obj = new Class1();
+													
+													public void display() {
+														obj.display(this);
+													}
+													
+													
+												}
+						
+						5) use this keyword as a constructor argument: 
+						
+						
+									Ex:
+									
+										public class ThisKeywordAsConstructorArgument {
+
+													public static void main(String[] args) {
+														
+														TestClass1 testClass1 = new TestClass1();
+													}
+
+												}
+
+
+												class TestClass1{
+													
+													TestClass1(){
+														
+														TestClass2 testClass2 = new TestClass2(this);
+													}
+													
+													public void display() {
+														
+														System.out.println("Executed from TestClass1");
+													}
+												}
+
+
+												class TestClass2{
+													
+													TestClass1 testClass1;
+													
+													TestClass2(){
+														
+													}
+													
+													TestClass2(TestClass1 testClass1){
+														this.testClass1 = testClass1;
+														testClass1.display();
+													}
+													
+												}
+						
+			 

@@ -1,0 +1,46 @@
+Stream API: Stream API can be used to perform intermediate and terminal operations on collection object.
+										Stream is not a data structure i.e it takes values from the collection object.
+										Stream can't change the original collection object.
+										Intermediate operations are lazy(it will return stream) and terminal operations are early(return the result).
+										   
+									   stream(): This method can be used to create stream for the collection object.
+									   
+									  Intermediate operations:
+									  
+										map: map method can be used to map value to the stream.
+										
+										filter: filter method can be used to filter objects based on predicate
+										
+										sort: can be used to sort the stream.
+										
+									  Terminal Operations: 
+									  
+									  
+									  collect: Can be used to return result which is returned by intermediate operation.
+									  
+									  forEach: can be used to iterate over stream elements.
+									  
+									  reduce: can be used reduce elements of stream.
+							
+							SequencialStream: SequencialStream uses single thread to process operations 
+											  We can use stream() method to create SequencialStream
+							
+						    parallelStream:  this parallelStream divides stream into multiple and process them parallelly.
+											 We can use parallelStream() method to create SequencialStream
+							
+							
+							
+							
+							Optional<T> : Optional can be used to handle NullPointerException.
+							
+											empty(): can be used to create empty optional.
+											
+											Optional.of(): can accept only non-null values.
+											Optional.ofNullable(): Can accept both null and non-null.
+											
+							Method-Reference: Method Reference can be used alternative for lambda expression.
+											  We can :: operator to refer method
+							
+												Referring static method:
+												Referring instance method:
+												Referring constructor:

@@ -1,0 +1,58 @@
+Based on access there are two types of objects:
+												1) mutable objects: These are objects whose state can be changed 
+																	the class can be extended.
+																	the class members can be modified
+												
+												2) immutable objects: These are objects whose state can't be changed 
+																	  the class can't be extended.
+																	  the class members can't be modified
+															
+												Ways to create immutable objects:
+																					i) create class as final class.
+																					ii) create all the members as private and final
+																					iii) provide only getter methods to access members of a class
+																					
+																					
+																					
+																					
+											EX:
+											
+													public class MutableObjects {
+
+														public static void main(String[] args) {
+															
+															Example1 obj1 = new Example1();
+															obj1.h =56;
+															
+															Example2 obj2 = new Example2();
+															System.out.println(obj2.getM1());
+															System.out.println(obj2.getK());
+														}
+
+													}
+
+
+													class Example1{
+														
+														int h = 78;
+														
+														
+													}
+
+													final class Example2{
+														
+														private final int k = 67;
+														
+														private final String m1() {
+															return "Java";
+														}
+														
+														public String getM1() {
+															return m1();
+														}
+														
+														public int getK() {
+															return k;
+														}
+														
+													}

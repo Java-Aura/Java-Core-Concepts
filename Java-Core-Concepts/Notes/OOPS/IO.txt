@@ -1,0 +1,261 @@
+java.io: this package can be used to perform input/output operations 
+
+
+		Stream: stream is the sequence of data that are read from the source and write into the destination.
+		
+				Based on the data that the stream can hold streams are two types.
+				
+				
+				1)Character stream:
+				
+				2) Byte Stream:
+				
+																
+				1)Character stream:	character stream can be used read and write single character.
+									
+									All the character stream classes are extended from Reader and and Writer abstract class.
+									
+									
+									
+								File:  File is the class which refers to the specified file.
+										
+										Syntax: File f= new File(String filePath);
+										
+										by the above statement it will not create the file. it will just refers to the specified file.
+										to create file we can use createNewFile();
+										
+																
+									EX:					
+									public class FileExample {
+
+										public static void main(String[] args) throws IOException {
+											
+											File f = new File("D:\\Testtsts.java");
+											File f1 = new File("D:\\TestDIR");
+											System.out.println(f.exists());
+											System.out.println(f1.exists());
+											if(!f.exists())
+											{
+												f.createNewFile();
+											}
+											if(!f1.exists()) {
+												f1.mkdir();
+											}
+											System.out.println(f1.exists());
+											System.out.println(f.exists());
+											
+
+										}
+
+									}
+
+					
+					FileReader: FileReader is the class can be used to read the character of data from source.
+					
+								Ex:
+											public class FileReaderExample {
+
+													public static void main(String[] args) throws IOException {
+														
+														File f = new File("D:\\Test.java");
+														
+														try(FileReader fr = new FileReader(f);FileReader fr1 = new FileReader(f); ) {
+															char ch [] = new char[400];
+															int read = fr.read();
+															while(read != -1) {
+																System.out.print((char)read);
+																read = fr.read();
+															}
+															fr1.read(ch);
+															System.out.println("printing using char array");
+															System.out.println(ch);
+															/*
+															 * for(char c : ch) { System.out.print(c); }
+															 */
+														} catch (FileNotFoundException e) {
+															// TODO Auto-generated catch block
+															e.printStackTrace();
+														} catch (IOException e) {
+															// TODO Auto-generated catch block
+															e.printStackTrace();
+														}
+														
+
+													}
+
+												}
+												
+								Note: using FileReader we can read character by character to overcome this we can use BufferedReader.
+												
+						BufferedReader: BufferedReader class extended from Reader class and can be used to read the character data line by line and through buffer.
+										Using BufferedReader class we can read the character data line by line.
+										
+										EX:
+											public class BufferedReaderExample {
+
+													public static void main(String[] args) throws IOException {
+														
+														File f = new File("D:\\Test.java");
+														try (BufferedReader br = new BufferedReader(new FileReader(f));){
+															String str = br.readLine();
+															while(str !=null ) {
+																System.out.println(str);
+																str = br.readLine();
+															}
+														} catch (FileNotFoundException e) {
+															// TODO Auto-generated catch block
+															e.printStackTrace();
+														} catch (IOException e) {
+															// TODO Auto-generated catch block
+															e.printStackTrace();
+														}
+														
+													}
+
+												}
+						
+						FileWriter: FileWriter class extended from Writer and can be used to write the character data to the destination character by character.
+									Using FileWriter if we wan to put new line into the file then we need to \n in each write operation.
+									
+						
+						
+									Ex:
+											public class FileWriterExample {
+
+													public static void main(String[] args) throws IOException {
+														
+														File f = new File("D:\\WriterTest.txt");
+														if(!f.exists()) {
+															f.createNewFile();
+														}
+														try (FileWriter fw = new FileWriter(f);){
+															char ch [] = {'c','t'};
+															String str = "java";
+															fw.write("test data");
+															fw.write("\n");
+															fw.write(65);
+															fw.write("\n");
+															fw.write(ch);
+															fw.write("\n");
+															fw.write(str);
+															fw.flush();
+														} catch (IOException e) {
+															// TODO Auto-generated catch block
+															e.printStackTrace();
+														}
+
+													}
+
+												}
+
+					BufferedWriter: BufferedWriter class extended from Writer class and can be used to write character of data to the destination.
+									BufferedWriter first will write the data into the internal buffer and upon calling close() or flush() methods will write the data into the destination.
+									for new line we can use newLine() method of BufferedWriter.
+									using BufferedWriter we can reduce number of communications with destination. but in case of FileWriter each time the writer will communicate with destination.
+									
+					
+									EX:
+									
+											public class BufferedWriterExample {
+
+													public static void main(String[] args) throws IOException {
+														File f = new File("D:\\BufferedWriterExample.txt");
+														if(!f.exists()) {
+															f.createNewFile();
+														}
+														try (BufferedWriter bw = new BufferedWriter(new FileWriter(f));){
+															char ch [] = {'c','t'};
+															String str = "java";
+															bw.write("test data");
+															bw.newLine();
+															bw.write(65);
+															bw.newLine();
+															bw.write(ch);
+															bw.newLine();
+															bw.write(str);
+															bw.newLine();
+															bw.write(65);
+															bw.flush();
+															System.out.println("Data hs been written");
+														} catch (IOException e) {
+															// TODO Auto-generated catch block
+															e.printStackTrace();
+														}
+													}
+
+												}
+					
+					
+					PrintWriter: PrintWriter is the advanced writer to writer to the character data into the destination.
+								for new line we can use println() method of PrintWriter.
+								
+								
+								
+								
+						2) Byte Stream: To deal with binary data we can use InputStream and OutputStream classes.
+						
+						
+						
+										InputStream: InputStream is from java.io package and can be used to read data in the form of bytes.
+													 InputStream can be used to read data byte by byte.
+													 InputStream is an abstract class which parent class for all the input Stream classes.
+													 
+													 
+											Some of the sub-classes of InputStream are :
+													 
+											i)FileInputStream:
+											ii)ByteArrayInputStream:
+											iii)ObjectInputStream:
+														
+														
+											methods of InputStream:
+											
+												read(): read one byte of data from the source.
+												read(byte[] arr): reads bytes from the source and write into the specified byte array.
+
+										
+										
+										OutputStream: OutputStream is from java.io package and can be used to write the data into the destination in bytes.
+													  OutputStream is an abstract class which parent class for all the Output Stream classes.
+													  
+													  
+													  Some of the sub-classes of OutputStream are :
+													  
+													  i)FileOutputStream:
+													  ii)ByteArrayOutputStream:
+													  iii)ObjectOutputStream:
+													 
+													 
+													 methods of OutputStream:
+											
+												write(): writes the specified byte to the destination or output Stream.
+												write(byte[] arr): writes the bytes from the specified array to the output Stream.
+												
+												
+									Serialization: The process of converting object into data into the binary data or byte stream data is known as serialization.
+												   For serialization we can use ObjectOutputStream.
+												   
+												   
+									De-Serialization: The process of converting byte stream data or binary data into object data is known as De-serialization.
+													  For De-serialization we can use ObjectInputStream.
+													  
+													  
+									Note: While serialization if we don't want any variable not to be serialized then we can  declare that variable as transient.
+										  The object which we are using for serialization that class must and should implements Serializable interface
+										  
+										  
+									Serializable : Serializable is the interface which is marker interfaces or empty interface.
+													
+												Why marker interface when it's not having any methods?
+												Ans: to specify functionality or to convey what type of operation we are doing
+												Ex: Serializable
+									
+									Transient : Transient is the keyword.
+												The variable which is declared using transient keyword that variable data will not be serialized.
+												in this case jvm will assign default value to transient variable in place of original value.
+												
+												
+										Note: In the process of de-serialization one object will be created.
+										
+								Why to serialize object?
+								Ans: To send object data across the network. this is due to through network we can send only binary data.

@@ -1,0 +1,249 @@
+Inheritance: The process of extending/inheriting/getting features from one class to another is known is inheritance.
+			 here the features can be methods,constructor and variables
+			 
+			 Parent class: The class whose features are extended/inherited is known as parent class or super-class
+			 
+			 child class:  The class which inherits/ extends features from another class is known child class or sub-class.
+			 
+			 This inheritance can be achieved using extends keyword
+			 
+			 Syntax: 
+			 
+						class <class-name/child-class> extends <class-name/parent-class>{
+							// block of statements
+							
+						}
+						
+			super keyword: super is the reference variable which can be used to access parent class features.
+						   use super keyword to access parent class constructor but this access should be inside the constructor of the child class and should be the first statement
+							
+							
+					EX:
+					
+								public class InheritanceExample {
+
+										public static void main(String[] args) {
+										
+											class2 class2 = new class2();
+											class2.getBalance();
+										}
+
+									}
+
+									class class1{
+										
+										String accNumber = "14324324455";
+										public void displayAccountInfo() {
+											
+											System.out.println("Account holder name is java");
+											
+										}
+										
+										class1(){
+											System.out.println("class1 constructor");
+										}
+										
+									}
+
+									class class2 extends class1{
+										
+										class2(){
+											super();
+										}
+										
+										String accNumber = "465465466";
+										public void getBalance() {
+											
+											super.displayAccountInfo();
+											System.out.println("balance of account: "+super.accNumber + " is Rs"+800);
+										}
+										
+										public void displayAccountInfo() {
+
+											System.out.println("Account holder name is core");
+
+										}
+										
+									}
+									
+									
+							
+						Advantages:
+										1) code reusability : A child class can use the same features from parent class.
+										2) Abstraction : A child class can access parent class features but the implementation is not visible to child class.
+										3) polymorphism :  Object in multiple forms 
+										
+										
+						Disadvantage : tight coupling with parent class. Means the changes made in parent class will reflect on child classes.
+									   if a class extending features from more than one class than it's not easy to understand from which the features are extended.
+									   
+									   
+					Types of inheritance:
+					
+									1) Single inheritance: Extending features from one class is known as Single inheritance
+									
+											Ex:
+												public class SingleInheritance {
+
+													public static void main(String[] args) {
+														Two two = new Two();
+														two.display();
+													}
+												}
+
+												class One {
+													
+													public void display() {
+														System.out.println("From class One and display method");
+													}
+													
+												}
+
+												class Two extends One{
+													
+													
+												}
+									
+									2) multilevel inheritance: In this one class extends features from parent class and that class acts as parent class for another class.
+											
+											EX:
+											
+										public class MultiLevelInheritance {
+
+												public static void main(String[] args) {
+													
+													Test4 test4 =  new Test4();
+													test4.extendFromTest1();
+												}
+
+											}
+
+
+											class Test1{
+												
+												public void extendFromTest1() {
+													System.out.println("Multilevel inheritance");
+												}
+											}
+
+											class Test2 extends Test1{
+												
+												
+												
+											}
+
+											class Test3 extends Test2{
+												
+												
+											}
+
+											class Test4 extends Test3{
+												
+												
+											}
+																				
+									
+										
+									
+									3) Hierarchical inheritance :  One class acts as base class or parent class more than one class.
+									
+											EX:
+											
+													public class HierarchicalInheritance {
+
+															public static void main(String[] args) {
+
+																SBI sbi = new SBI();
+																sbi.displayPolicy();
+																HDFC hdfc =  new HDFC();
+																hdfc.displayPolicy();
+																ICICI icici = new ICICI();
+																icici.displayPolicy();
+																
+															}
+
+														}
+
+
+														class RBI{
+															
+															public String getCommonPolicy() {
+																return "Every account holder should link PAN with account";
+															}
+														}
+
+														class SBI extends RBI{
+															
+															public void displayPolicy() {
+																System.out.println("Policy for SBI: "+getCommonPolicy());
+															}
+															
+															
+														}
+
+														class HDFC extends RBI{
+															public void displayPolicy() {
+																System.out.println("Policy for HDFC: "+getCommonPolicy());
+															}
+														}
+
+														class ICICI extends RBI{
+															public void displayPolicy() {
+																System.out.println("Policy for ICICI: "+getCommonPolicy());
+															}
+															
+														}
+									
+									4) Multiple inheritance: Extending features from more than one parent class into one child class is known as Multiple inheritance
+															 But in java multiple inheritance is not supported using classes due to ambiguity(conflict of from which parent class the features)
+															 But in java multiple inheritance is supported using interfaces.
+															 
+															 
+												
+									
+									5) Hybrid inheritance: circular inheritance also supported using interfaces.
+									
+									
+						Note: We can extend only one class at a time.
+							  for calling parent class constructor use super keyword and this can be the first statement inside child class constructors
+							  While inheriting features from parent the child class can't access private members of parent class.
+							  
+			Method hiding: if parent class having static method and child class also having same static method with same method signature then it is known as method hiding.
+				   But in case of instance methods same can be called as method overriding.
+				   This is because static methods are binded to class where as instance methods are binded to object.
+				   Static methods overdried but it's not override it's method hiding.
+				   
+				   EX:
+									public class MethodHiding {
+
+										public static void main(String[] args) {
+											ChildClass obj = new ChildClass();
+											ChildClass.display();
+											obj.instanceMethod();
+										}
+
+									}
+
+									class ParentClass {
+
+										static public void display() {
+											System.out.println("From parent class static method");
+										}
+
+										public void instanceMethod() {
+											System.out.println("From parent class instance method");
+										}
+
+									}
+
+									class ChildClass extends ParentClass {
+
+										static public void display() {
+											System.out.println("From child class static method");
+										}
+
+										public void instanceMethod() {
+											System.out.println("From child class instance method");
+										}
+									}
+							  

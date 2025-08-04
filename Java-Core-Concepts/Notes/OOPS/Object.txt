@@ -1,0 +1,74 @@
+Object class in java: Object class is from java.lang package.
+					  Object class is the super/parent class for all the classes declared in java either directly or indirectly.
+					  if the class doesn't derivied/extends any class then the object class is parent/super class directly.
+					  if the class extends/derived any class then the object class is parent/super class indirectly.
+					  
+					  The methods from object class are available to all the class objects in java.
+					  
+					  public java.lang.Object();
+					  public final native java.lang.Class<?> getClass();
+					  public native int hashCode();
+					  public boolean equals(java.lang.Object);
+					  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+					  public java.lang.String toString();
+					  public final native void notify();
+					  public final native void notifyAll();
+					  public final void wait() throws java.lang.InterruptedException;
+					  public final native void wait(long) throws java.lang.InterruptedException;
+					  public final void wait(long, int) throws java.lang.InterruptedException;
+					  protected void finalize() throws java.lang.Throwable;
+					  
+					  
+					   public final native java.lang.Class<?> getClass(): This method will return runtime class of an object.
+					   public native int hashCode(): Hash code doesn't refers to an address location of an object.
+													 It is a numeric number which is created by JVM.
+													 hash codes are used jvm while storing objects into the hashing related data structures(HashTable,HashMap,HashSet etc.).
+													 The main advantage of using hash code while storing is searching of an object will be easy.
+													 
+													 Note: In hash, searching is not depends on number of elements. 
+														   For each object we need return unique hash code. that's why we need to override hashcode to differentiate.
+														   If we don't override hashcode() then jvm will generate it.But
+														   if we override hashcode() then it's our responsiblity to generate unique number for objects.
+														   
+														   Ex: @Override
+																			public int hashCode() {
+																				int hash = 7;
+																				int hashCode = name.hashCode();
+																				hash = 11*hash+(hashCode);
+																				return hash;
+																			}
+														       
+															   
+					public boolean equals(java.lang.Object): The equals() method  from object class is  for reference comparison not for content comparison.
+															 But in String class this equals() method is overrided for content comparison. 
+															 that means other than the String class equals() method is for always reference comparison
+													 
+													 
+													 
+													 
+													 
+									Contract between equals() and hashcode(): If two objects are equal by equals() method then their hash code must be same.
+																			  If two objects are equal by hashCode() method then those objects may or may not equal equals method().
+																			  to satisfy this condition we need to override hashCode() if we override equals() method.
+																			  
+																			  
+																			  
+					protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException:  for Creating copy of an object.
+					
+					public java.lang.String toString(): This method can be used for String representation of an object.
+														For predefined classes compiler will add toString() method to print object data.
+														But for User-defined objects we have to override it to get String representation of an object.
+														
+														
+														
+					 public final native void notify():
+					 public final native void notifyAll():
+					 public final void wait() throws java.lang.InterruptedException: 
+					 public final void wait() throws java.lang.InterruptedException;
+					 public final native void wait(long) throws java.lang.InterruptedException;
+					 public final void wait(long, int) throws java.lang.InterruptedException;
+					 
+					 All the above methods can be used for Thread communication in multithreading applications.
+					 
+					 protected void finalize() throws java.lang.Throwable: Just before destroying an object garbage collector will call this finalizer() method to complete Clean-up activity.
+																		   The objects with null reference or without reference are eligible for garbage collector.

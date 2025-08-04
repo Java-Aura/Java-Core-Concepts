@@ -1,0 +1,70 @@
+Naming conventions in java:
+							
+							Type 1: 
+									declaring Classes and interfaces: while classes declaring classes and interfaces we should follow pascal case type.
+										ex: class TestClassDeclaration{
+															}
+															
+							Type 2: 
+									Methods: While declaring methods we should follow camel case type.
+									
+											Ex: public void methodNameDeclaration{
+												
+											}
+											
+							Type 3:
+									Variables: variable names should be meaningful.
+									ex: String name = "akhil";
+										String yuy = "akhil";// should give meaningful name  so avoid declaring such variable names 
+									Variable names should not start with _ and $ even though they allowed
+										ex: String _test= "test"; //avoid declaring such variable names 
+											String $test = "test"; //avoid declaring such variable names 
+									Variable name should not be declared with operators
+										ex: String +test = "test"; // //avoid declaring such variable names 
+									Variable name also should follow camel case type
+									No two variables have the same name.unique names we should use.
+									
+							Type 4:
+							
+									Constant declaration: constants should be declared with all uppercase type.
+										
+											ex: final String ADHAAR_NUMBER = "1222432435";
+											
+							Type 5: 
+								
+									Package: The prefix of each unique package name should be lowercase and should be any of top level domain names like com,edu,org,gov etc.
+											 Then we should follow same variable naming conventions.
+											 ex: org.Osamina.Student.Info;
+												 gov.Telangana.TSRTC;
+											 
+											
+									
+Note: The changes made in one object will not reflect on another object in terms of non-static.
+	  But in terms of static the changes made in one object will reflect all objects created for the class.
+	  
+								  Ex: 
+							public class StaticNonStatic {
+
+								public static void main(String[] args) {
+									
+									StaticNonStaticTest obj = new StaticNonStaticTest(); // one object is created
+									
+									obj.k=70;
+									obj.j=90;
+									System.out.println(obj.k); // 70
+									System.out.println(obj.j);  //90
+									
+									StaticNonStaticTest obj1 = new StaticNonStaticTest(); // second object is created
+									System.out.println(obj1.k); // 30
+									System.out.println(obj1.j);  //90
+									
+								}
+
+							}
+
+							class StaticNonStaticTest{
+								
+								int k = 30;
+								static int j = 20;
+								
+							}

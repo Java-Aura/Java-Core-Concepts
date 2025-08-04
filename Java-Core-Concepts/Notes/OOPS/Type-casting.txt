@@ -1,0 +1,48 @@
+Type casting/ type conversion:	 The process of converting one type of data to another type of data.
+
+
+								1. Automatic or widening conversion: This is done by complier automatically when two data types are compatible
+																	 This can be done When we assign some value of smaller data type to bigger data type.
+																	 
+																	 boolean -> byte-> char-> short -> int -> long -> float -> double 
+								
+								2. Narrowing or explicit conversion: the process of converting bigger type of data to smaller type of data.
+																	 And it's done automatically we have to do it manually.
+ 
+																	double -> float -> long - > int -> short -> byte.
+	  
+	  
+							Ex:
+											public class MainClass {
+
+														public static void main(String[] args) {
+															
+															
+															int k = 14;
+															long l = k; // implicit conversion
+															byte b = (byte) l; // explicit conversion
+															
+															/*
+															 * boolean bool = false; int j = (int)bool;
+															 */
+															
+															char c = 'A';
+															int h = (int)c;
+															System.out.println(b);
+															
+															Parent parent = new Child(); // implicit conversion
+															Child child  =  (Child)new Parent(); // explicit conversion
+															
+														}
+
+													}
+
+													class Parent{
+														
+													}
+
+
+													class Child extends Parent{
+														
+													}
+													

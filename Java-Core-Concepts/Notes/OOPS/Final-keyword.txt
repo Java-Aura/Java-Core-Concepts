@@ -1,0 +1,120 @@
+final keyword: final keyword can be used to declare constants.
+								   We can use final keyword only with variables,methods and classes
+								   the variables which are declared using final keyword are final variables and can't be reassigned.
+								   The methods which are declared using final keyword are final methods and can't be overrided.
+								   The classes which are declared using final keyword final classes and can't be inherited/extended.
+								   
+								   
+								EX:
+											public class FinalExample {
+
+													public static void main(String[] args) {
+													
+														Final1 obj = new Final1();
+														obj.display();
+														Final obj1 = new Final();
+														System.out.println(obj1.str);
+													}
+
+												}
+
+												 final class Final{
+													String str = "Java";
+												}
+
+
+												/* class Final1 extends Final{ */ // gives error as Final is the final class
+												class Final1 {
+													final int k = 30;
+													public void display() {
+														// k = 67; // re-assign and can't be done decause it's a final
+														
+														System.out.println("value of k: "+(k)+30); // here changing value
+														
+													}
+													
+													final public void finalMethod() {
+														System.out.println("From final method");
+													}
+													
+												}
+
+
+												class Final2 extends Final1{
+													/* 
+													public void finalMethod() {
+														System.out.println("From final method");
+													}
+													can't override final method
+													*/
+												}
+										
+							Initialization of final variables:
+																There are three ways to initialize value for final variables.
+																When a variable is declared as final and value is not assigned then it known as blank final variable.
+																
+																i) At the time of declaration: Assign value to the final variable at the time of declaration
+																							   Ex : final int j =90;
+																ii) Using instance block: Use instance block to initialize values to final instance  variables.
+																iii) Using static block: Use static block to initialize value to static final variables
+																iv) within the constructor: Use constructor to initialize values for final instance variables.			
+																							If the class has multiple constructors and the variables which are initialized in one constructor must be initialized in all of constructors.
+																
+																
+																Note: The static variables which are declared using final keyword can be initialized at the time of declaration or within the static block.
+																		  we can't initialize within the instance block or constructor But,
+																		  The static variables which are declared without final keyword are can also be initialized within the instance block or constructor
+																		  
+																Note: The final variables which are declared inside constructor or methods or blocks are local to that area only, and must be initialized at the time of declaration.
+																
+									EX:
+									
+													public class FinalVariableInitialization {
+
+															final String str;
+															final static String str1;
+															final int k;
+
+															{
+																final int j;
+																j = 34;
+																//j = 34;
+																str = "Java";
+																// str1 = "initialzie from instance block";
+															}
+
+															static {
+																// str = "static initialize";// instance variables can't be accessed in static
+																// area
+																final int j;
+																j = 34;
+																str1 = "initialzie from instance block";
+															}
+
+															FinalVariableInitialization() {
+																final int j;
+																j = 34;
+																this.k = 89;
+															}
+															
+															FinalVariableInitialization(int val){
+																this.k = val;
+															}
+															
+															FinalVariableInitialization(String val){
+																this.k = 67;
+															}
+
+															public static void main(String[] args) {
+																final int j;
+																j = 34;
+																
+																FinalVariableInitialization obj = new FinalVariableInitialization();
+																FinalVariableInitialization obj1 = new FinalVariableInitialization(12);
+																System.out.println("Value of str : "+obj.str);
+																System.out.println("Value of str1 : "+str1);
+																System.out.println("Value of K : "+obj.k);
+																System.out.println("Value of K from another constructor: "+obj1.k);
+															}
+
+														}

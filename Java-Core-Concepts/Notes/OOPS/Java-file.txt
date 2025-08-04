@@ -1,0 +1,6 @@
+Java file: The file which is saved as a .java extension is known java file.
+		   Within the java we can declare classes interfaces,methods enums.
+		   the first statement in the java should be package declaration, then import statements.
+		   after import statements we can declare the classes,methods,interfaces, enums.
+		   and each java file can have only one public class and which is having main method.
+		   java file should save a class name which is public.

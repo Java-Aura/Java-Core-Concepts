@@ -1,0 +1,129 @@
+Java Tokens
+============
+
+1) Keywords: keywords are reserved words in Java we can't use them for variable name, method name, etc. ex: break, continue,class, interface, int, void, public, private etc.
+
+2) identifiers: means giving name to variables, methods,classes etc.
+
+ standards we should follow : identifier name should start with letter, dollar symbol. 
+							  underscore, apart from this we can have any character, case sensitive, and can't start with digit but inside we can have digits.
+							  we should not use keywords as identifiers.
+							  
+
+3) Literals: means constants that means once defined can't be changed. we can declare constants in Java using final keyword.
+
+		Ex:  final int k=20;
+			 k=34; // Compile time exception: the final local variable k cannot be assigned. It must be blank and not using a compound assignment
+			 
+			 String literal: String str = "test";
+
+4) Operators: can be used to perform certain operation on variables.
+
+	Arithmetic : +,-,/,%.* ==> can be used to perform Arithmetic operations
+	unary : ++,--,! ==> can be used to perform increment/decrement operations
+	
+				Increment: can be used to increment the value by one.
+				
+							post-increment: first display the value and increment the value
+							pre-increment: first increment the value by one and then display it.
+							
+				Decrement: can be used to decrease the value by one.
+				
+							post-decrement: first display the value and decrement the value
+							pre-decrement: first decrement the value by one and then display it.
+							
+							
+		Ex:
+		
+		
+					int i = 30;
+					int k = 34;	
+		
+		// unary : ++,--,! ==> can be used to perform increment/decrement operations
+		System.out.println(++i); // pre-increment = 31
+		System.out.println(i++); // post-increment.. == 32 after display the value will be incremented by one
+		System.out.println(i); // 32
+		
+		/*
+		 * Decrement: can be used to decrease the value by one.
+		 */
+		
+		System.out.println(--k);  // 33 pre-decrement: first decrement the value by one and then display it.
+		System.out.println(k--);  // 33 post-decrement: first display the value and decrement the value
+		System.out.println(k); // 32
+			      
+	assignment : =, +=,-=,/=,%=,*=  ==> can be used to assign values to variables.
+							
+							EX: 
+							
+									// assignment : =, +=,-=,/=,%=,*=  ==> can be used to assign values to variables.
+		
+										int j = 10; 
+										j += 12; // same as j = j+12 which is 22
+										j -= 10; // same as j = j-10 which 12
+					
+	relational: <,> <=,>=, == returns true/false ==> can be used to copare the values(find the equality/ greater than/less than etc). return true/ false
+	
+	
+					EX: 
+										int h = 12;
+										int t = 23;
+										System.out.println(h>t); // false
+										System.out.println(t>h); // true
+										int g = 12;
+										int d = 12;
+										int n = 9;
+										System.out.println(g==d); // true
+										System.out.println(g>h); // false
+										System.out.println(g>=h); // true
+										System.out.println(n<=g); // true
+												
+				
+						
+	Ternary : which is alternative for if else. ==> can be used to assign values to variables based on some condition
+	
+				Syntax:
+						<data-type> <variable-name> = (condition) ? <some-value> : <some-value>;
+					
+	bitwise : &, |,^, ~ ==> can be used to perform bitwise comparison between operands.
+	
+		operands: operands are values can be used to perform some operations.
+		
+			EX:
+			
+								//bitwise : &, |,^, ~ ==> can be used to perform bitwise comparison between operands.
+								
+								int bit1 = 10;
+								int bit2= 12;
+								int a =5;
+								
+								System.out.println(Integer.toBinaryString(bit1));
+								System.out.println(Integer.toBinaryString(bit2));
+								System.out.println(Integer.toBinaryString(-6));
+								System.out.println("(bit1 & bit2) parseInt = "+Integer.parseInt("1000", 2)); //bit1 & bit2
+								System.out.println("(bit1 | bit2) parseInt = "+Integer.parseInt("1110", 2)); // (bit1 | bit2
+					
+								
+								System.out.println("(bit1 & bit2) = " + (bit1 & bit2));
+								System.out.println("(bit1 | bit2) = " + (bit1 | bit2));
+								System.out.println(~a);
+								
+								     1010
+(and)1100
+     ======
+     1000
+
+    1010
+(or)1100
+    ======
+    1110
+		
+
+5) Symbols: special characters in Java which having special meaning.
+
+ [] : this is for declaring Array of elements.
+ {} : this is for to declare block of statements.
+ () : can be used to declare methods,constructors.
+ , : can be used to separate variables, or statements.
+ ; : can be used to specify end of the statement.
+ * : pointer variable in Java
